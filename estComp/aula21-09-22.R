@@ -10,3 +10,11 @@ teste1 <- scan()
 
 
 teste2 <- edit(teste1)
+
+library(readxl)
+lertabela <- read_excel("C:/#Pedro Eccel Zimmermann/AlbumCopaDoMundo2022_PEDRO.xlsx")
+lertabela
+
+
+
+
