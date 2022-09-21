@@ -1,0 +1,12 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+div {
+    background-color: aquamarine;
+}
+span {
+    background-color: blueviolet;
+}
+img {
+    width: 20%;
+}

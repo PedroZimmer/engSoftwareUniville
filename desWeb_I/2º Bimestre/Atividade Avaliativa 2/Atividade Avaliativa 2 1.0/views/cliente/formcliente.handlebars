@@ -1,0 +1,77 @@
+
+<body>
+  
+
+<form action="/clientes/save" method="POST">
+    <input type="hidden" value="{{cliente.id}}" name="id">
+  <div class="form-group">
+    <label for="txtnome">Nome:</label>
+    <input class="form-control" value="{{cliente.nome}}" type="text" id="txtnome" name="nome" />
+  </div>
+  <div class="form-group">
+    <label for="txtendereco">Endereço:</label>
+    <input class="form-control" value="{{cliente.endereco}}"type="text" id="txtendereco" name="endereco" />
+  </div>
+  <div class="form-group">
+    <label for="txttelefone">Telefone:</label>
+    <input class="form-control" type="text"  value="{{cliente.telefone}}"id="txttelefone" name="telefone" />
+  </div>
+  <div class="form-group">
+    <label for="txtemail">E-Mail:</label>
+    <input class="form-control" type="email" value="{{cliente.email}}"id="txtemail" name="email" />
+  </div>
+  <div class="form-group">
+    <p>Nivél:</p>
+    <div id="nivel23">
+    <label for="txtnivel">Mirim:</label>
+    <input type="radio" name="nivel" value="mirim" id="txtnivel" {{checked cliente.nivel 'mirim'}}>
+    <label for="txtnivel">Pleno:</label>
+    <input type="radio" name="nivel" value="pleno" id="txtnivel" {{checked cliente.nivel 'pleno'}}>
+    <label for="txtnivel">Master:</label>
+    <input type="radio" name="nivel" value="master" id="txtnivel" {{checked cliente.nivel 'master'}}>
+    </div>
+  </div>
+  <div class="form-group" id="cpf">
+    <label for="txtcpf">CPF:</label>
+    <input class="form-control" type="text" value="{{cliente.cpf}}"id="txtcpf" name="cpf" />
+  </div>
+  <div class="form-group">
+    <label for="txtcartao">Número do cartão::</label>
+    <input class="form-control" type="text" value="{{cliente.cartao}}"id="txtcartao" name="cartao" />
+  </div>
+  <div class="form-group">
+    <label for="txtemail">CVC:</label>
+    <input class="form-control" type="text" value="{{cliente.cvc}}"id="txtcvc" name="cvc" />
+  </div>
+  <button type="submit" class="btn btn-primary" id="botaoenviar">Enviar</button>
+</form>
+</body>
+
+<style>
+
+  form {
+    margin-top: 20px;
+  }
+  nav {
+  background-image: linear-gradient(to right,#870a28, rgb(0 97 60));
+  } 
+
+  #cpf {
+    margin-top: 10px;
+  }
+
+
+  #nivel23 {
+    margin-top: -10px;
+  }
+  body {
+    background-image: linear-gradient(to right,#870a28, rgb(0 97 60));
+  }
+  form {
+    color: white;
+  }
+
+  input {
+    color: rgba(255, 192, 192, 0.805);
+  }
+</style>

@@ -1,0 +1,30 @@
+<h3>Clientes</h3>
+<a href="/clientes/novo" class="btn btn-primary">Novo</a>
+<table class="table">
+  <thead>
+    <tr> <!--TABLE ROW-->
+      <th>ID</th> <!--TABLE DATA-->
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Telefone</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each listaClientes}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.nome}}</td>
+      <td>{{this.endereco}}</td>
+      <td>{{this.telefone}}</td>
+      <td>
+        <a href="/clientes/alterar/{{this.id}}" class="btn btn-primary">Alterar</a>
+
+
+
+
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

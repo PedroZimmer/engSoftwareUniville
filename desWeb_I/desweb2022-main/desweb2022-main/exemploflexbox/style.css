@@ -1,0 +1,17 @@
+div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: lightgray;
+}
+p {
+    text-align: center;
+    background-color: yellow;
+    width: 5rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 5rem;
+    border: 0.3rem solid;
+    margin: 1rem;
+    height: 3rem;
+}

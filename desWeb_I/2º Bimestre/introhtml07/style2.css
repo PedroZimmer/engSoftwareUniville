@@ -1,0 +1,65 @@
+/* * aplica a regra em todos os nós do DOM
+* {
+    background-color : blueviolet;
+}
+
+Seletor de tipo aplica a regra em um tag HTML
+header {
+    background-color
+}
+
+
+
+Seletor por atributo aplica na tag que tem um atributo determinado
+a[class]{
+    background-color: blueviolet;
+}
+
+
+
+a[href="portifolio.html"] {
+    background-color: blueviolet;
+}
+
+a[class~="segundo"] {
+    background-color: blueviolet;
+}
+
+a[href^="por"] {
+    background-color: green;
+}
+
+a[href$="html"] {
+    background-color: yellow;
+}
+
+a[href*="c"] {
+    background-color: brown;
+}
+*/
+
+a[class|="segundo"] {
+    background-color: blue;
+}
+
+li:nth-child(1){
+    background-color: burlywood;
+}
+
+li:nth-last-child(2) {
+    background-color: aqua;
+}
+
+li:first-child{
+    background-color: bisque;
+}
+
+li:last-child{
+    background-color: rgb(241, 133, 0);
+}
+
+a:hover{
+    background-color: antiquewhite;
+    font-size: 10000px;
+    transition: 10s ease-in;
+}

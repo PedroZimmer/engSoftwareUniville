@@ -1,0 +1,13 @@
+aside {
+    float: right;
+    background-color: black;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+}
+main {
+    float: left;
+    width: 300px;
+}

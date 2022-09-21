@@ -1,0 +1,80 @@
+body {
+  background-color: azure;
+  width: 100%;
+}
+
+.home {
+  color: aliceblue;
+}
+
+.sede {
+  font-weight: bold;
+  
+}
+
+.menubotao {
+  text-decoration: none;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.centro {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+}
+
+img {
+  width: 60vw;
+}
+
+main > div {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.limpeza {
+  font-weight: bold;
+}
+
+.linx {
+  text-align: center;
+}
+
+.linx {
+  text-align: center;
+}
+
+.logoemp {
+  width: 200px;
+}
+
+.logoemplinx {
+  width: 200px;
+}
+
+.empresas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -110px;
+}
+
+.linxposition {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -80px;
+  margin-top: 50px;
+}
+
+.mapa {
+  text-align: center;
+}

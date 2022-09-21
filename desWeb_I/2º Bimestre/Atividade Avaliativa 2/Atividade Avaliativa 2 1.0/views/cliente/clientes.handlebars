@@ -1,0 +1,101 @@
+
+<body>
+  <span> <h3>Sócios</h3>
+  <a href="/clientes/novo" class="btn btn-success" id="botao23">Novo</a></span>
+   
+
+  
+<table class="table" id="clientes">
+  <thead>
+    <tr> <!--TABLE ROW-->
+      <th>ID</th> <!--TABLE DATA-->
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Telefone</th>
+      <th>E-Mail</th>
+      <th>Nivel</th>
+      <th>CPF</th>  
+      <th>Numero do cartao</th>
+      <th>CVC</th>
+      
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each listaClientes}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.nome}}</td>
+      <td>{{this.endereco}}</td>
+      <td>{{this.telefone}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.nivel}}</td>
+      <td>{{this.cpf}}</td>
+      <td>{{this.cartao}}</td>
+      <td>{{this.cvc}}</td>
+      <td>
+        <a href="/clientes/alterar/{{this.id}}" class="btn btn-success">Alterar</a>
+        <button class="btn btn-danger js-delete" data-id="{{this.id}}">Excluir</button>
+
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir cliente</h5>
+      </div>
+      <div class="modal-body">
+        <p>Confirma a exclusão do cliente?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="btnsim">Sim</button>
+        <button type="button" class="btn btn-secondary" id="btncancelar" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+
+
+<style>
+  body {
+      background-image: linear-gradient(rgba(199, 31, 31, 0.5), rgba(199, 31, 31, 0.5)), url("https://s3.amazonaws.com/assets-fluminense/uploads%2F1618506730133-33053076563_8798fa26ea_k.jpg");
+      color: white;
+  }
+  th {
+    color: white;
+  }
+
+  h3 {
+    margin-top: 30px;
+  }
+
+  td  {
+    color: white;
+  }
+ 
+  nav {
+  background-image: linear-gradient(to right,#870a28, rgb(0 97 60));
+  } 
+  span {
+    display: flex;
+
+  }
+  #botao23 {
+    height: 40px;
+    margin: 30px;
+  }
+
+
+
+</style>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/public/site.js"></script>

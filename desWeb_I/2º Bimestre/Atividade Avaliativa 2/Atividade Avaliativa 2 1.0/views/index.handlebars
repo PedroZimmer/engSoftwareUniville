@@ -1,0 +1,230 @@
+<html lang="pt-br">
+  <head>
+    <title>Página Inicial</title>
+  </head>
+  <main>
+    <body>
+        <div class="container">
+            <div class="fluminense">
+              <h1>Fluminense Football Club</h1>
+            </div>
+            <div class="logo">
+              <img class="logo" src="https://logodetimes.com/times/fluminense/logo-fluminense-1536.png"/>
+            </div>
+            <div class="foto">
+              <img src="https://gay.blog.br/wp-content/uploads/2022/01/torcida-do-fluminense-1501250423241_v2_900x506-1280x720-1.jpg">
+            </div>
+            <div class="descricao">
+              <ul>
+                <li>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam impedit quia aspernatur quam. Sint cupiditate veniam ipsum dicta veritatis facere, quod nostrum atque vel accusamus in itaque perspiciatis natus. Sequi?</p>
+                </li>
+                <li>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam impedit quia aspernatur quam. Sint cupiditate veniam ipsum dicta veritatis facere, quod nostrum atque vel accusamus in itaque perspiciatis natus. Sequi?</p>
+                </li>
+              </ul>
+              <div class="botao1">
+              <a href="#ancora" type="button" class="btn btn-success"><b>VEJA OS PLANOS</b></a>
+              </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container2">
+          <div class="plano1"><h1 class="cortitulo">Mirim</h1>
+
+          </div>
+          <div class="plano2">
+            <h1 class="cortitulo">Pleno</h1>
+          </div>
+          <div class="plano3"><h1 class="cortitulo">Master</h1></div>
+          <div class="carac1">
+            <a name="ancora"></a>
+            <ul>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, repellendus quis, consequatur excepturi impedit nesciunt recusandae beatae ut in veritatis eos perspiciatis nostrum, aliquid a dignissimos illum quas nemo adipisci.</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, amet magnam labore aperiam eligendi tempore minima recusandae, vel, totam aspernatur quas architecto. Quibusdam sint iure magni pariatur, sapiente nostrum quasi!</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, amet magnam labore aperiam eligendi tempore minima recusandae, vel, totam aspernatur quas architecto. Quibusdam sint iure magni pariatur, sapiente nostrum quasi!</li>
+               <div id="botao75">
+                <a href="/clientes/novo" class="btn btn-success" ><b>SEJA SÓCIO TRICOLOR</b></a>
+              </div>
+            </ul>
+          </div>
+          <div class="carac2">
+            <ul>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, repellendus quis, consequatur excepturi impedit nesciunt recusandae beatae ut in veritatis eos perspiciatis nostrum, aliquid a dignissimos illum quas nemo adipisci.</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, amet magnam labore aperiam eligendi tempore minima recusandae, vel, totam aspernatur quas architecto. Quibusdam sint iure magni pariatur, sapiente nostrum quasi!</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, amet magnam labore aperiam eligendi tempore minima recusandae, vel, totam aspernatur quas architecto. Quibusdam sint iure magni pariatur, sapiente nostrum quasi!</li>
+               <div id="botao75">
+                <a href="/clientes/novo" class="btn btn-success" ><b>SEJA SÓCIO TRICOLOR</b></a>
+              </div>           
+            </ul>
+          </div>
+          <div class="carac3">
+            <ul>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, repellendus quis, consequatur excepturi impedit nesciunt recusandae beatae ut in veritatis eos perspiciatis nostrum, aliquid a dignissimos illum quas nemo adipisci.</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, amet magnam labore aperiam eligendi tempore minima recusandae, vel, totam aspernatur quas architecto. Quibusdam sint iure magni pariatur, sapiente nostrum quasi!</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, amet magnam labore aperiam eligendi tempore minima recusandae, vel, totam aspernatur quas architecto. Quibusdam sint iure magni pariatur, sapiente nostrum quasi!</li>
+
+              <div id="botao75">
+                <a href="/clientes/novo" class="btn btn-success" ><b>SEJA SÓCIO TRICOLOR</b></a>
+              </div>
+              
+            </ul>
+          </div>
+        </div>
+        <div>
+          
+        </div>
+      
+    </body>
+    
+  </main>
+  
+</html>
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    h1 {
+        margin-top: 100px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 50px;
+    }
+
+
+    body {
+      background-color: #870a28;
+      background-image: linear-gradient(rgba(199, 31, 31, 0.5), rgba(199, 31, 31, 0.5)), url("https://s3.amazonaws.com/assets-fluminense/uploads%2F1618506730133-33053076563_8798fa26ea_k.jpg");
+
+
+    }
+
+    .descricao > input {
+      margin: 30px;
+    }
+
+    h1,p {
+      color: white;
+    }
+    /*------------CONTAINER 1------------*/
+
+    .container {
+      display: grid; 
+      grid-auto-columns: 1fr; 
+      grid-template-columns: 450px 450px 450px; 
+      grid-template-rows: 300px 300px; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "fluminense fluminense logo"
+        "foto descricao descricao"; 
+      color: white;
+      
+    }
+
+    
+    .fluminense { 
+      grid-area: fluminense; 
+    }
+    .logo { 
+      grid-area: logo;
+    }
+    .foto { 
+      grid-area: foto;
+     }
+    .descricao { 
+      grid-area: descricao; 
+      margin-left: 150px;
+      margin-top: 30px ;
+    }
+
+    .foto > img {
+      width: 30em;
+    }
+
+    .logo > img {
+      margin-top: 30px;
+      margin-left: 350px;
+      width: 300px;
+    }
+
+    body > img {
+      width: 100vw;
+    }
+
+    .logo {
+      margin-left: -100px;
+      margin-top: -30px;
+    }
+    /*------------CONTAINER 1------------*/
+
+    /*------------CONTAINER 2------------*/
+
+    .container2 {
+      display: grid; 
+      grid-auto-columns: 1fr; 
+      grid-template-columns: 450px 450px 450px; 
+      grid-template-rows: 250px 400px; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "plano1 plano2 plano3"
+        "carac1 carac2 carac3"
+        "carac1 carac2 carac3"
+        "carac1 carac2 carac3";    
+    margin-top: 180px;   
+}
+
+    .plano1 { grid-area: plano1; }
+    .plano2 { grid-area: plano2; }
+    .plano3 { grid-area: plano3; }
+    .carac1 { grid-area: carac1; }
+    .carac2 { grid-area: carac2; }
+    .carac3 { grid-area: carac3; }
+
+
+.carac1,.carac2,.carac3 {
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  margin: 10px;
+  
+}
+.plano1,.plano2,.plano3 {
+  color:black;
+  text-align: center;
+  margin-bottom: 30px;
+  margin: 10px;
+  
+ 
+  }
+
+.cortitulo {
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  
+}
+
+nav {
+  background-image: linear-gradient(to right,#870a28, rgb(0 97 60));
+}
+
+.botao1 {
+  text-align: center;
+}
+
+ul {
+  margin-top: 10px;
+}
+
+li {
+  margin: 3px;
+}
+
+#botao75 {
+  text-align: center;
+  margin: 15px;
+}
+</style>

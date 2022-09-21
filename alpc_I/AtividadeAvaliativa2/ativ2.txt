@@ -1,0 +1,5 @@
+Uma loja utiliza o código V para transação à vista e P para transação a prazo. Faça um programa que receba o código e o valor de quinze transações, calcule e mostre:
+a.    O valor total das compras à vista;
+b.    O valor total das compras à prazo;
+c.    O valor total das compras efetuadas;
+d.    O valor da primeira prestação das compras a prazo, sabendo-se que serão pagas em três vezes;

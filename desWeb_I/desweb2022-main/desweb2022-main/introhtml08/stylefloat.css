@@ -1,0 +1,20 @@
+.container {
+    border: 1px solid black;
+    width: 500px;
+    /*height: 280px;*/
+}
+div {
+    border: 2px dotted black;
+}
+.container > div:nth-child(2n){
+    background-color: #ccc;
+}
+.um {width: 100px; height: 50px;}
+.dois {width: 65px; height: 40px;}
+.tres {width: 50px; height: 45px;}
+.quatro {width: 115px; height: 60px; clear:both}
+.cinco {width: 45px; height: 20px;}
+.seis {width: 50px; height: 30px;}
+.container > div{
+    float:left;
+}

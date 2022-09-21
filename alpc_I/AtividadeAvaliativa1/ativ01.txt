@@ -1,0 +1,19 @@
+Instruções:
+
+Faça um único programa na linguagem Python para calcular o lucro de uma empresa de transporte que tem uma van escolar. 
+
+Considere que o cálculo é feito para uma única semana e que as vans trabalham de segunda a sábado, 
+para cada dia de trabalho solicite (utilizando bloco(s) de repetição) (2.0):
+
+a.    O número total de passageiros transportados.
+b.    A KM realizada no dia de trabalho.
+ 
+Calcule e mostre:
+a.    Qual dia da semana foi transportado o maior número de passageiros e o menor número de passageiros. (2.0)
+
+b.    A média de KM rodados, considerando o total de KM da semana pelo número de dias de uma semana de trabalho. (2.0)
+
+c.    O número de dias na semana em que a van transportou mais de 50 passageiros no dia. (1.0)
+
+d.    O lucro da empresa na semana, considerando que a empresa recebe R$14,00 reais por passageiro, 
+a van tem uma média de consumo de um litro a cada 11km e o combustível custa R$ 6.90 o litro. (3.0)

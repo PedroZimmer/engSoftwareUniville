@@ -1,0 +1,9 @@
+p {
+    border: 1px solid black;
+}
+.especial > strong {
+    margin-top: 3800px;
+    margin-bottom: 5400px;
+    margin-left: 150px;
+    margin-right: 280px;
+}

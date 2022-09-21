@@ -1,0 +1,29 @@
+<form action="/clientes/save" method="POST">
+
+    <input type="hidden" value="{{cliente.id}}" name="id">
+    
+    <div class="form-group">
+        <label for="txtnome">Nome:</label>
+        <input class="form-control" value="{{cliente.nome}}" type="text" id="txtnome" name="nome">
+    </div>
+    <div class="form-group">
+        <label for="txtendereco">Endereço:</label>
+        <input class="form-control" value="{{cliente.endereco}}" type="text" id="txtendereco" name="endereco">
+
+    </div>
+    <div class="form-group">
+        <label for="txtsexo">Sexo:</label>
+        <input class="form-control" value="{{cliente.sexo}}" type="text" id="txtsexo" name="sexo">
+    </div>
+    <div class="form-group">
+        <label for="txttelefone">Telefone:</label>
+        <input class="form-control" value="{{cliente.telefone}}" type="text" id="txttelefone" name="telefone">
+    </div>
+    <div class="form-group">
+        <label for="txtcancelado">Cancelado:</label>
+        <input  value="sim" type="radio" id="txtcancelado" name="cancelado" {{checked cliente.cancelado 'sim'}}>SIM
+        <input  value="nao" type="radio" id="txtcancelado" name="cancelado" {{checked cliente.cancelado 'nao'}}>NÃO
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

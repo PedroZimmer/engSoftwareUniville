@@ -1,0 +1,25 @@
+.container {
+    border: 1px solid black;
+    width: 500px;
+    /*height: 280px;*/
+}
+div {
+    border: 2px solid black;
+}
+
+.container > div:nth-child(2n){
+    background-color: gray;
+
+
+}
+
+.um { width: 100px; height: 50px;}
+.dois { width: 400px; height: 50px;}
+.tres { width: 100px; height: 50px;}
+.quatro { width: 100px; height: 50px; clear:both;}
+.cinco { width: 100px; height: 50px;}
+.seis { width: 100px; height: 50px;}
+
+.container > div {
+    float: left;
+}

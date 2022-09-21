@@ -1,0 +1,56 @@
+/* Seletor * aplica a regra em todos os nós do DOM
+* {
+    background-color: blueviolet;
+}
+Seletor de tipo aplica a regra em um tag HTML
+header {
+    background-color: blueviolet;
+}
+Seletor por atributo aplica na tag que tem um atributo determinado
+a[class]{
+    background-color: blueviolet;
+}
+Seletor por atributo com valor determinado
+a[href="portifolio.html"] {
+    background-color: blueviolet;
+}
+Seletor por atributo com valor determinado ou separado por espaço em branco
+a[class~="segundo"] {
+    background-color: blueviolet;
+}
+Seletor por atributo com valor iniciado pelo informado
+a[href^="por"] {
+    background-color: blueviolet;
+}
+Seletor por atributo com valor finalizado pelo informado
+a[href$="html"] {
+    background-color: blueviolet;
+}
+Seletor por atributo que contenha o texto
+a[href*="c"] {
+    background-color: blueviolet;
+}
+Seletor por atributo que contenha valor com hífen
+a[class|="segundo"] {
+    background-color: blueviolet;
+}
+Seletor por estrutura, seleciona o filho do numero determinado
+li:nth-child(1){
+    background-color: blueviolet;
+}
+Seletor por estrutura, seleciona o filho do numero determinado iniciando pelo último
+li:nth-last-child(2){
+    background-color: blueviolet;
+}
+Seletor por estrutura, primeiro e ultimo filho
+li:first-child{
+    background-color: blueviolet;
+}
+li:last-child{
+    background-color: blueviolet;
+}
+*/
+a:hover{
+    background-color: blueviolet;
+    font-size: 2rem;
+}

@@ -1,0 +1,54 @@
+<h3>Clientes</h3>
+
+<a href="/clientes/novo" class="btn btn-primary">Novo</a>
+
+<table class="table" id="clientes">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Cancelado</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each listaclientes}}
+        <tr> <!-- Table ROW --> 
+            <td>{{this.id}}</td> <!-- Table DATA --> 
+            <td>{{this.nome}}</td>
+            <td>{{this.endereco}}</td>
+            <td>{{this.telefone}}</td>
+            <td>{{this.cancelado}}</td>
+            <td>
+                <a href="/clientes/alterar/{{this.id}}" class="btn btn-primary">Alterar</a>
+                <button class="btn btn-danger js-delete" 
+                        data-id="{{this.id}}">Excluir</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir cliente</h5>
+      </div>
+      <div class="modal-body">
+        <p>Confirma a exclusão do cliente?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+        <button type="button" class="btn btn-secondary" id="btncancelar" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/public/site.js"></script>
+

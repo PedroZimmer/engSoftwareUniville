@@ -1,0 +1,42 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+p:before {
+    content: "[";
+    font-weight: bold;
+}
+
+p:after {
+    content: "]";
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+p {
+    background-color: #1dad18;
+    width: 20em;
+    height: 200px;
+    padding: 35px 50px 30px 20px;
+    border: solid #000;
+    border-width: 10px 30px 50px 15px;
+    margin: 20px;
+    border-top-color: red;
+    border-right-color: yellow;
+    border-bottom-color: magenta;
+    border-left-color: cyan;
+    border-color: transparent;
+    border-color: red yellow magenta cyan;
+    border-top-style: dashed;
+    border-right-style: ridge;
+    border-bottom-style: groove;
+    border-left-style: dotted;
+}
+
+
