@@ -10,3 +10,5 @@ nomes[2] = "Opa"
 nomes[3] = "jk"
 nomes[4] = "kjfshkd"
 print(nomes)
+
+#to so testando kkk
