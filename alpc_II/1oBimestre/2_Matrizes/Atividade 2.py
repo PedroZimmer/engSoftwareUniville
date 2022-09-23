@@ -35,8 +35,8 @@ for i in range(12):
         maior = totalmes[i]
         omaiormes = meses[i]
 for i in range(12):
-    print("Total de",meses[i],":",totalmes[i])
+    print("Total de",meses[i],": R$",totalmes[i])
 '''for i in range(4):
     print("Semana",i+1,":",totalsemana[i])'''
-print("2- Total de vendas:", totalvendas)
-print("3- Mês:", omaiormes, "teve", maior,"vendas!")
+print("2- Total das vendas:", totalvendas)
+print("3- Mês:", omaiormes, "teve", maior," valor de vendas!")
