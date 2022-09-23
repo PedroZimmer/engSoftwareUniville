@@ -16,6 +16,7 @@ cont = 10
 totalmes = [0]*12
 totalsemana = [0]*12
 totalvendas = 0
+maior = 0
 for i in range(12):
     print("Mês:", meses[i])
     for j in range(4):
@@ -28,10 +29,14 @@ for i in range(12):
             else:
                 repet = False
         totalmes[i] += matriz[i][j]
-        totalsemana[j] += matriz[i][j]
+        #totalsemana[j] += matriz[i][j]
         totalvendas += matriz[i][j]
+    if totalmes[i] > maior:
+        maior = totalmes[i]
+        omaiormes = meses[i]
 for i in range(12):
     print("Total de",meses[i],":",totalmes[i])
-for i in range(4):
-    print("Semana",i+1,":",totalsemana[i])
-print("Total de vendas:", totalvendas)
+'''for i in range(4):
+    print("Semana",i+1,":",totalsemana[i])'''
+print("2- Total de vendas:", totalvendas)
+print("3- Mês:", omaiormes, "teve", maior,"vendas!")
