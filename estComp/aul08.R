@@ -43,3 +43,29 @@ legend(80,0.3,c("x1","x2"), lty= c(1,2), col=c(1,2))
 x<-1:10
 y<-c(2,5,9,6,7,8,4,1,3,10)
 x;y
+
+#1o gráfico
+plot(x,y)
+
+
+#2o gráfico
+plot(x,y,                     #plota x e y
+     xlab = "Eixo x",         #nomeia o eixo x
+     ylab = "Eixo y",         #nomeia o eixo y
+     main="Personalizando um gráfico", # titulo
+     xlim = c(0,10), #limites do eixo x
+     ylim = c(0,10), #limites do eixo y
+     col = "red",    #cor dos pontos
+     pch = 22,       #formato dos pontos
+     bg = "blue",    #cor do preenchimento
+     tcl = 0.4,      #tamanho dos traços dos eixos
+     las = 1,        #orientaçãp dps valores nos eixos
+     cex = 1.5,      #tamanho do ponto
+     bty='l')        #altera as bordas
+
+
+
+
+
+
+
