@@ -37,3 +37,9 @@ x2<-0.3*exp(-0.3*x)
 y<-cbind(x1,x2)
 matplot(y,type="l")
 legend(80,0.3,c("x1","x2"), lty= c(1,2), col=c(1,2))
+
+
+#PERSONALIZANDO GRAFICOS
+x<-1:10
+y<-c(2,5,9,6,7,8,4,1,3,10)
+x;y
