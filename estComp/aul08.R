@@ -62,10 +62,3 @@ plot(x,y,                     #plota x e y
      las = 1,        #orientaçãp dps valores nos eixos
      cex = 1.5,      #tamanho do ponto
      bty='l')        #altera as bordas
-
-
-
-
-
-
-
