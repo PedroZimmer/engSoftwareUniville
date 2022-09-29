@@ -11,3 +11,9 @@ def soma(num1:float, num2:float):
 
 guardarresultado = soma(2,2)
 print(guardarresultado)
+
+def zuera():
+    return 1, "qqcoisa", 30.5
+x,y,z = zuera()
+print(x,y,z)
+
