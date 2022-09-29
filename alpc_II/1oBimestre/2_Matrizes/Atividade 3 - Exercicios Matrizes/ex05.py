@@ -35,5 +35,3 @@ if cont1 > 1:
         print("Loja:", asmaioreslojas[i]+1,"| Produto:", osmaioresprodutos[i]+1,"| Valor:", maior)
 else:
     print("A loja", amaiorloja+1,"tem o produto:", omaiorprod+1,"custando:",maior)
-
-#teste
