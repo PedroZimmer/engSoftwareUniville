@@ -49,7 +49,15 @@ dimnames(x) <- list(
   alt<-c("primeira","segunda"))
 
 
+
 x
 #PROCURANDO
 x[1,2,1] #Linha Coluna Matriz
+
+x[1,2,] #Linha Coluna Tudo
+
+x[1,,1] #Linha Tudo Matriz
+
+x[,2,1] #Tudo Coluna Matriz
+
 
