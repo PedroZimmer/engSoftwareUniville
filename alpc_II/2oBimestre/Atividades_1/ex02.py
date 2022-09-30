@@ -6,4 +6,12 @@ b.	1m = 60s
 
 '''
 
+def funcao(valor:int):
+    segemhoras = valor / 3600
+    segemmin = valor / 60
+    segemseg = valor / 1
+    return(segemhoras,segemmin,segemseg)
 
+valor = int(input("Insira os segundos..."))
+segemhoras,segemmin,segemseg = funcao(valor)
+print("Seg em hrs:", segemhoras,"\nSeg em min:", segemmin, "\nSeg em seg:", segemseg)
