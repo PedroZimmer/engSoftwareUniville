@@ -13,3 +13,16 @@ c.	Faça uma função que determine e devolva ao programa principal a quantidade
 '''
 
 
+'''
+for i in range(5):
+    sexo = input('Digite o sexo: ')
+    olhos = input('Digite a cor dos olhos: ')
+    cabelo = input('Digite a cor dos cabelos: ')
+    idade = int(input('Digite a idade: '))
+'''
+
+sexo = ['M', 'F', 'F', 'M', 'F']
+olhos = ['A', 'C', 'C', 'A', 'C']
+cabelos = ['L', 'P', 'C', 'L', 'P']
+idade = [20, 30, 40, 50, 60]
+
