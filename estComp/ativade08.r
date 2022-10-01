@@ -12,18 +12,3 @@ x <- c(5, 4, 6, 1, 2, 5, 3, 1, 3, 3, 4, 4, 1, 5, 5, 6, 1, 2, 5, 1, 3, 4, 5, 1, 1
 
 # Histograma
 hist(x, breaks = 6, col = "green", main = "Histograma", xlab = "Valores", ylab = "Frequência")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
