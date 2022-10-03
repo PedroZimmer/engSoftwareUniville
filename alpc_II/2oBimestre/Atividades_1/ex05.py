@@ -12,13 +12,17 @@ c.	Faça uma função que determine e devolva ao programa principal a quantidade
     cuja idade está entre 18 e 35 (inclusive) e que tenham olhos azuis e cabelos louros.
 '''
 
-
 '''
+sexo = []
+olhos = []
+cabelo = []
+idade = []
 for i in range(5):
-    sexo = input('Digite o sexo: ')
-    olhos = input('Digite a cor dos olhos: ')
-    cabelo = input('Digite a cor dos cabelos: ')
-    idade = int(input('Digite a idade: '))
+    print("Pessoa", i+1)
+    sexo.append(input('Digite o sexo: '))
+    olhos.append(input('Digite a cor dos olhos: '))
+    cabelo.append(input('Digite a cor dos cabelos: '))
+    idade.append(int(input('Digite a idade: ')))
 '''
 
 sexo = ['M', 'F', 'F', 'M', 'F']
