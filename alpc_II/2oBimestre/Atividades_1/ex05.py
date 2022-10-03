@@ -26,7 +26,33 @@ for i in range(5):
 '''
 
 sexo = ['M', 'F', 'F', 'M', 'F']
-olhos = ['A', 'C', 'C', 'A', 'C']
-cabelos = ['L', 'P', 'C', 'L', 'P']
+olhos = ['C', 'C', 'C', 'A', 'C']
+cabelos = ['P', 'P', 'C', 'L', 'P']
 idade = [20, 30, 40, 50, 60]
 
+def mediaidade(olhos, cabelos, idade):
+    somaidade = 0
+    cont = 0
+    for i in range(len(olhos)):
+        if olhos[i] == 'C' and cabelos[i] == 'P':
+            somaidade += idade[i]
+            cont += 1
+    return somaidade/cont
+
+print(mediaidade(olhos, cabelos, idade))
+
+def maioridade(idade):
+    maior = idade[0]
+    for i in range(len(idade)):
+        if idade[i] > maior:
+            maior = idade[i]
+    return maior
+print("maior idade =", maioridade(idade))
+
+def qtd_feminino(olhos, cabelos, idade, sexo):
+    cont = 0
+    for i in range(len(olhos)):
+        if idade[i] >= 18 and idade[i] <= 35 and olhos[i] == 'A' and cabelos[i] == 'L' and sexo[i] == 'F':
+            cont += 1
+    return cont
+print(qtd_feminino(olhos, cabelos, idade, sexo))
