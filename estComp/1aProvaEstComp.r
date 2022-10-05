@@ -36,7 +36,7 @@ c4
 # e) Acrescente uma linha à matriz M contendo elementos sequenciais de 1 a 7, chame a nova matriz de N.
 
 a <- seq(0, 100, 5)
-b <- matrix(a, nrow = 3, ncol = 7, byrow = TRUE)
+b <- matrix(a, nrow = 3, ncol = 7, byrow = 0)
 c <- b[2, 3]
 d <- summary(b)
 e <- rbind(b, c(1:7))
