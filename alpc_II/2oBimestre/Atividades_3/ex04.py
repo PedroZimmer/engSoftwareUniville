@@ -7,11 +7,16 @@ S = 1 + 1/1! + 1/2! + 1/3! + ... + 1/N!
 
 
 def funcao(num):
-    for i in range(1,num):
+    soma = 0
+    for i in range(1,num+1):
         fatorial = i
-        soma += 1/i
+        for j in range(1,i):
+            fatorial *= j
+        soma += 1/fatorial
+    return soma + 1
         
-        
-
 
 num = int(input("Numero: "))
+
+resposta = funcao(num)
+print(resposta)
