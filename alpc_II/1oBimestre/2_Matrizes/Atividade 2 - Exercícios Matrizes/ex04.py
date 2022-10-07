@@ -12,11 +12,15 @@ for i in range(10):
         matriz[i][j] = cont
         cont += 1
         if cont > 10:
-            cont = 1        
+            cont = 1       
+            
+             
 asmenores = [0] * 10
 menornota = 0
 provamenor = [0] * 10
 qtdmenor = [0,0,0]   
+
+
 for i in range(10):
     for j in range(3):
         if j == 0:
@@ -25,6 +29,7 @@ for i in range(10):
         if matriz[i][j] < menornota:
             menornota = matriz[i][j]
             provamenor[i] = j
+            
     if provamenor[i] == 0:
         qtdmenor[0] += 1
     else:
@@ -33,6 +38,8 @@ for i in range(10):
         else:
             qtdmenor[2] += 1
     asmenores[i] = menornota
+    
+    
 print(matriz)
 for i in range(10):
     print("Aluno", i+1)
