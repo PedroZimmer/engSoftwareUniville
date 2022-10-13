@@ -10,5 +10,8 @@ calctab2 = lambda num1,num2: num1 * num2
 print(calctab2(2,3))
 
 
-calctab3 = lambda calctab2: calctab2(2,3) * 2
-print(calctab3(calctab2))
+def gerartabuada(numero, regra):
+    for i in range(11):
+        print(regra(numero,i))
+        
+gerartabuada(10,calctab2)
