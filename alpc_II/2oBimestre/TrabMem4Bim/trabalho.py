@@ -6,22 +6,22 @@ def primeiraescolha(tamanho, letra, memoria):
     cont = 0
     listavazio = []
     while memoria:
-        if cont != tamanho:
+        if cont != tamanho: #SE O CONTADOR FOR DIFERENTE DO TAMANHO
             for i in range(len(memoria)):
-                verificar = memoria[i]
+                verificar = memoria[i] #COLOCA A POSIÇÃO DA MEMÓRIA EM UMA VARIAVEL
                 if verificar == ' ':
-                    cont+=1
-                    listavazio.append(i)
-                    if tamanho > 1:
+                    cont+=1 #CONTA SE FOIR VAZIO
+                    listavazio.append(i) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LISTA
+                    if tamanho > 1: #SE O TAMANHO FOR MAIOR QUE 1 CONTINUA A PESQUISA
                         for j in range(1, tamanho):
-                            if memoria[i+j-1] == ' ':
+                            if memoria[i+j-1] == ' ': #TEM Q VER ESSA INDEXAÇÃO!!!!!!!!!!!!
                                 cont+=1
-                                listavazio.append(i+1)
+                                listavazio.append(i+1) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LISTA
                     else:
                         memoria[i] = letra
         else:
             for i in listavazio:
-                memoria[i] = letra
+                memoria[i] = letra #COLOCA A LETRA NA POSIÇÃO DA MEMÓRIA
             pass
     return memoria
 
@@ -36,7 +36,7 @@ def entradas():
 #IMPRIMIR MEMORIA
 def imprimememoria():
     for i in range(100):
-        if i % 20 == 0:
+        if i % 20 == 0: #QUEBRA A CADA 20 POSIÇÕES
             print("\n")
         print(memoria[i], end='|')
 
@@ -64,6 +64,7 @@ while(opcao != 5):
         #PRIMEIRA ESCOLA
         if(opcao == 1):
             tamanho,letra = entradas() #ENTRADA DE DADOS
+            print("Memória antes da alocação: ", memoria)
             resprimeiarescolha = primeiraescolha(tamanho, letra, memoria) #CHAMADA DA FUNÇÃO
             print(resprimeiarescolha)
             pass
