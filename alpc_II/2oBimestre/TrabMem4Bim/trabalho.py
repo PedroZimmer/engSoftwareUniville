@@ -3,25 +3,30 @@ from tracemalloc import start
 
 #PRIMEIRA ESCOLHA
 def primeiraescolha(tamanho, letra, memoria):
+    print(tamanho, letra)
     cont = 0
     listavazio = []
-    while memoria:
+    terminou = False
+    while terminou == False:
         if cont != tamanho: #SE O CONTADOR FOR DIFERENTE DO TAMANHO
-            for i in range(len(memoria)):
+            for i in range(100):
                 verificar = memoria[i] #COLOCA A POSIÇÃO DA MEMÓRIA EM UMA VARIAVEL
                 if verificar == ' ':
                     cont+=1 #CONTA SE FOIR VAZIO
                     listavazio.append(i) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LISTA
                     if tamanho > 1: #SE O TAMANHO FOR MAIOR QUE 1 CONTINUA A PESQUISA
                         for j in range(1, tamanho):
-                            if memoria[i+j-1] == ' ': #TEM Q VER ESSA INDEXAÇÃO!!!!!!!!!!!!
+                            if memoria[i+j] == ' ': #TEM Q VER ESSA INDEXAÇÃO!!!!!!!!!!!!
                                 cont+=1
-                                listavazio.append(i+1) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LISTA
+                                listavazio.append(i+1) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LIST
+
                     else:
                         memoria[i] = letra
+                        terminou = True
         else:
             for i in listavazio:
                 memoria[i] = letra #COLOCA A LETRA NA POSIÇÃO DA MEMÓRIA
+                terminou = True
             pass
     return memoria
 
@@ -65,8 +70,8 @@ while(opcao != 5):
         if(opcao == 1):
             tamanho,letra = entradas() #ENTRADA DE DADOS
             print("Memória antes da alocação: ", memoria)
-            resprimeiarescolha = primeiraescolha(tamanho, letra, memoria) #CHAMADA DA FUNÇÃO
-            print(resprimeiarescolha)
+            primeiraescolha(tamanho, letra, memoria) #CHAMADA DA FUNÇÃO
+            #print(resprimeiarescolha)
             pass
         else:
             #MELHOR ESCOLHA
