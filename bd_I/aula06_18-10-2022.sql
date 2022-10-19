@@ -51,4 +51,10 @@ SELECT * FROM Clientes WHERE ClienteNome = 'Jon'
 UNION
 SELECT * FROM Clientes WHERE ClienteNome = 'Jon'
 
+--EXEMPLO 8
+SELECT ClienteNome, ClienteSobrenome FROM Clientes WHERE ClienteNome = 'Jon'
+UNION
+SELECT ClienteSobrenome, ClienteNome FROM Clientes WHERE ClienteNome = 'Jon'
+
+
 
