@@ -3,6 +3,7 @@ from tracemalloc import start
 
 # PRIMEIRA ESCOLHA
 '''
+#PRIMEIRAAAAAAAAAAAA TENTATIVAAAAAAAAAAAA 
 def primeiraescolha(tamanho, letra, memoria):
     print(tamanho, letra)
     cont = 0
@@ -32,7 +33,8 @@ def primeiraescolha(tamanho, letra, memoria):
     return memoria
 '''
 
-
+'''
+#SEGUNDA TENTATIVAAAAAAA - NÃO FUNCIONOU
 def primeiraescolha(tamanho, letra, memoria):
     listadosvazios = []
     vazioscolados = []
@@ -61,7 +63,44 @@ def primeiraescolha(tamanho, letra, memoria):
                 for k in vazioscolados:
                     memoria[k] = letra
                 return memoria
+'''
 
+def primeiraescolha(tamanho, letra, memoria):
+    listadosvazios = []
+    vazioscolados = []
+    for i in range(100):
+        if memoria[i] == ' ':
+            listadosvazios.append(i)
+    if tamanho == 1:
+        memoria[listadosvazios[0]] = letra
+        return memoria
+    else:
+        achou = False
+    
+        '''        
+        for m in range(len(vazioscolados)):
+            if vazioscolados[m] == vazioscolados[m+1]:
+                pass #TEM Q MUDAR AQUI
+            else:
+                del(vazioscolados[m+1])'''
+                
+        for j in range(len(listadosvazios)):
+            if j == listadosvazios[-1]:
+                break
+            if listadosvazios[j] + 1 == listadosvazios[j+1]:
+                if achou == False:
+                    vazioscolados.append(listadosvazios[j])
+                vazioscolados.append(listadosvazios[j+1])
+                achou = True
+            else:
+                if len(vazioscolados) == 0:
+                    achou = False
+                    if len(vazioscolados) > tamanho:
+                        vazioscolados = []
+            if len(vazioscolados) == tamanho:
+                for k in vazioscolados:
+                    memoria[k] = letra
+                return memoria
 
 # ENTRADA DE DADOS
 def entradas():
