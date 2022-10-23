@@ -31,3 +31,5 @@ library(modeest)
 mfv(b)
 #terceiro tipo
 subset(table(b),table(b)==max(table(b)))
+
+
