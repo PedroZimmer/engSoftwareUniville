@@ -2,100 +2,7 @@ import random
 from tracemalloc import start
 
 # PRIMEIRA ESCOLHA
-'''
-#PRIMEIRAAAAAAAAAAAA TENTATIVAAAAAAAAAAAA 
-def primeiraescolha(tamanho, letra, memoria):
-    print(tamanho, letra)
-    cont = 0
-    listavazio = []
-    terminou = False
-    while terminou == False:
-        if cont != tamanho: #SE O CONTADOR FOR DIFERENTE DO TAMANHO
-            for i in range(100):
-                verificar = memoria[i] #COLOCA A POSIÇÃO DA MEMÓRIA EM UMA VARIAVEL
-                if verificar == ' ':
-                    cont+=1 #CONTA SE FOIR VAZIO
-                    listavazio.append(i) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LISTA
-                    if tamanho > 1: #SE O TAMANHO FOR MAIOR QUE 1 CONTINUA A PESQUISA
-                        for j in range(1, tamanho):
-                            if memoria[i+j] == ' ': #TEM Q VER ESSA INDEXAÇÃO!!!!!!!!!!!!
-                                cont+=1
-                                listavazio.append(i+1) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LIST
 
-                    else:
-                        memoria[i] = letra
-                        terminou = True
-        else:
-            for i in listavazio:
-                memoria[i] = letra #COLOCA A LETRA NA POSIÇÃO DA MEMÓRIA
-                terminou = True
-            pass
-    return memoria
-'''
-
-'''
-#SEGUNDA TENTATIVAAAAAAA - NÃO FUNCIONOU
-def primeiraescolha(tamanho, letra, memoria):
-    listadosvazios = []
-    vazioscolados = []
-    for i in range(100):
-        if memoria[i] == ' ':
-            listadosvazios.append(i)
-    if tamanho == 1:
-        memoria[listadosvazios[0]] = letra
-        return memoria
-    else:
-        achou = False
-        for j in range(len(listadosvazios)):
-            if j == listadosvazios[-1]:
-                break
-            if listadosvazios[j] + 1 == listadosvazios[j+1]:
-                if achou == False:
-                    vazioscolados.append(listadosvazios[j])
-                vazioscolados.append(listadosvazios[j+1])
-                achou = True
-            else:
-                if len(vazioscolados) == 0:
-                    achou = False
-                    if len(vazioscolados) > tamanho:
-                        vazioscolados = []
-            if len(vazioscolados) == tamanho:
-                for k in vazioscolados:
-                    memoria[k] = letra
-                return memoria
-'''
-
-'''
-#TERCEIRA TENTATIVAAAAAAA - NÃO FUNCIONOU
-def primeiraescolha(tamanho, letra, memoria):
-    listadosvazios = []
-    vazioscolados = []
-    for i in range(100):
-        if memoria[i] == ' ':
-            listadosvazios.append(i)
-    if tamanho == 1:
-        memoria[listadosvazios[0]] = letra
-        return memoria
-    else:
-        achou = False
-        for j in range(len(listadosvazios)):
-            if j == listadosvazios[-1]:
-                break
-            if listadosvazios[j] + 1 == listadosvazios[j+1]:
-                if achou == False:
-                    vazioscolados.append(listadosvazios[j])
-                vazioscolados.append(listadosvazios[j+1])
-                achou = True
-            else:
-                if len(vazioscolados) == 0:
-                    achou = False
-                    if len(vazioscolados) > tamanho:
-                        vazioscolados = []
-            if len(vazioscolados) == tamanho:
-                for k in vazioscolados:
-                    memoria[k] = letra
-                return memoria
-'''
 
 def primeiraescolha(tamanho, letra, memoria):
     vazios = []
@@ -129,8 +36,7 @@ def primeiraescolha(tamanho, letra, memoria):
     return memoria
                 
             
-            
-            
+                   
 # ENTRADA DE DADOS
 def entradas():
     tamanho = int(input("Tamanho: "))
