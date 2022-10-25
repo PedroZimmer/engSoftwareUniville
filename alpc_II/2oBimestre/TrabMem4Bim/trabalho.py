@@ -41,8 +41,23 @@ def primeiraescolha(tamanho, letra, memoria, testememoria):
 def melhorescolha(tamanho, letra, memoria):
     vazios = []
     colocarmemoria = []
+    matrizmemoria = [[]]
+    cont = 0
     for i in range(100):
         if memoria[i] == ' ':
+            vazios.append(i)
+    #COLOCANDO NA MATRIZ 
+    for j in range(len(vazios)-1):
+        if vazios[j] - vazios[j+1] == -1:
+            matrizmemoria[cont].append(vazios[j])
+        else:
+            matrizmemoria[cont].append(vazios[j])
+            matrizmemoria.append([])
+            cont += 1
+    print(matrizmemoria)
+    
+        
+        
             
 
 
@@ -102,7 +117,7 @@ while(opcao != 5):
         else:
             # MELHOR ESCOLHA
             if (opcao == 2):
-                pass
+                melhorescolha(tamanho, letra, memoria)
             else:
                 if(opcao == 3):
                     pass
