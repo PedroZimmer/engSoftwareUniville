@@ -2,9 +2,7 @@ import random
 from tracemalloc import start
 
 # PRIMEIRA ESCOLHA
-
-
-def primeiraescolha(tamanho, letra, memoria):
+def primeiraescolha(tamanho, letra, memoria, testememoria):
     vazios = []
     colocarmemoria = []
     for i in range(100):
@@ -30,13 +28,26 @@ def primeiraescolha(tamanho, letra, memoria):
                             if len(colocarmemoria) == tamanho:
                                 for k in colocarmemoria:
                                     memoria[k] = letra
-                            
                     else:
                         pass
-    return memoria
-                
+    if memoria == testememoria:
+        print("\nNão foi possível alocar a memória")
+    else:
+        print("\nMemória alocada com sucesso")
+        return memoria
+
+
+#MELHOR ESCOLHA
+def melhorescolha(tamanho, letra, memoria):
+    vazios = []
+    colocarmemoria = []
+    for i in range(100):
+        if memoria[i] == ' ':
             
-                   
+
+
+
+
 # ENTRADA DE DADOS
 def entradas():
     tamanho = int(input("Tamanho: "))
@@ -68,6 +79,9 @@ memoria =  ['x', 'x', 'x', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', ' ', 'x', 'x'
 opcao = 0
 tamanho = 0
 letra = ''	
+
+
+
 # MENU
 while(opcao != 5):
     print("\n1 - Primeira Escolha\n2 - Melhor Escolha\n3 - Pior Escolha\n4 - Imprimir Memória\n5 - Sair")
@@ -81,7 +95,8 @@ while(opcao != 5):
         if(opcao == 1):
             tamanho, letra = entradas()  # ENTRADA DE DADOS
             #print("Memória antes da alocação: ", memoria)
-            primeiraescolha(tamanho, letra, memoria)  # CHAMADA DA FUNÇÃO
+            testememoria = memoria.copy() #CÓPIA DA MEMÓRIA
+            primeiraescolha(tamanho, letra, memoria,testememoria)  # CHAMADA DA FUNÇÃO
             # print(resprimeiarescolha)
             pass
         else:
