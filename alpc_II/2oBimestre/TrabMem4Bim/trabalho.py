@@ -19,11 +19,11 @@ def primeiraescolha(tamanho, letra, memoria, testememoria):
                                 colocarmemoria.append(vazios[j+1]) #ADICIONA A POSIÇÃO DA MEMÓRIA LIVRE NA LISTA
                                 if tamanho > 2:
                                     if j >= 1:
-                                        del(colocarmemoria[j])
+                                        del(colocarmemoria[j]) #Deleta o elemento repetido
                             else:
-                                colocarmemoria = []
-                                del(vazios[0])
-                                i -= 1
+                                colocarmemoria = [] #LIMPA A LISTA
+                                del(vazios[0]) #Deleta o elemento q n presta kkk
+                                i -= 1 #Faz com que a posição da memória volte uma posição
                                 break
                             if len(colocarmemoria) == tamanho:
                                 for k in colocarmemoria:
@@ -40,7 +40,6 @@ def primeiraescolha(tamanho, letra, memoria, testememoria):
 #MELHOR ESCOLHA
 def melhorescolha(tamanho, letra, memoria, testememoria):
     vazios = []
-    colocarmemoria = []
     matrizmemoria = [[]]
     cont = 0
     for i in range(100):
@@ -49,10 +48,10 @@ def melhorescolha(tamanho, letra, memoria, testememoria):
     #COLOCANDO NA MATRIZ 
     for j in range(len(vazios)-1):
         if vazios[j] - vazios[j+1] == -1:
-            matrizmemoria[cont].append(vazios[j])
+            matrizmemoria[cont].append(vazios[j]) #
         else:
-            matrizmemoria[cont].append(vazios[j])
-            matrizmemoria.append([])
+            matrizmemoria[cont].append(vazios[j]) 
+            matrizmemoria.append([]) #CRIA UMA NOVA LINHA 
             cont += 1
     print(matrizmemoria)
     achou = False
@@ -73,10 +72,41 @@ def melhorescolha(tamanho, letra, memoria, testememoria):
         print("\nMemória alocada com sucesso")
         return memoria
         
-            
-
-
-
+#PIOR ESCOLHA
+def piorescolha(tamanho, letra, memoria, testememoria):
+    vazios = []
+    matrizmemoria = [[]]
+    cont = 0
+    for i in range(100): 
+        if memoria[i] == ' ':
+            vazios.append(i)
+    #COLOCANDO NA MATRIZ
+    for j in range(len(vazios)-1):
+        if vazios[j] - vazios[j+1] == -1:
+            matrizmemoria[cont].append(vazios[j])
+        else:
+            matrizmemoria[cont].append(vazios[j]) 
+            matrizmemoria.append([]) #CRIA UMA NOVA LINHA 
+            cont += 1
+    print(matrizmemoria)
+    achou = False
+    for k in range(len(matrizmemoria)):
+        if achou == False:
+            if len(matrizmemoria[k]) >= tamanho:
+                opior = matrizmemoria[k]
+                achou = True
+        else:
+            if len(matrizmemoria[k]) >= tamanho:
+                if len(matrizmemoria[k]) > len(opior):
+                    opior = matrizmemoria[k]
+    for l in range(tamanho):
+        memoria[opior[l]] = letra
+    if memoria == testememoria:
+        print("\nNão foi possível alocar a memória")
+    else:
+        print("\nMemória alocada com sucesso")
+        return memoria
+        
 
 # ENTRADA DE DADOS
 def entradas():
@@ -140,6 +170,8 @@ while True:
                 melhorescolha(tamanho, letra, memoria, testememoria)
             else:
                 if(opcao == 3):
-                    pass
+                    tamanho, letra = entradas()  #ENTRADA DE DADOS
+                    testememoria = memoria.copy() #CÓPIA DA MEMÓRIA
+                    piorescolha(tamanho, letra, memoria, testememoria)        
                 else:
                     print("Opção inválida")
