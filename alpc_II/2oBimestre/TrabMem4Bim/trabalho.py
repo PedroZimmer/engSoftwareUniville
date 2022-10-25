@@ -38,7 +38,7 @@ def primeiraescolha(tamanho, letra, memoria, testememoria):
 
 
 #MELHOR ESCOLHA
-def melhorescolha(tamanho, letra, memoria):
+def melhorescolha(tamanho, letra, memoria, testememoria):
     vazios = []
     colocarmemoria = []
     matrizmemoria = [[]]
@@ -55,8 +55,23 @@ def melhorescolha(tamanho, letra, memoria):
             matrizmemoria.append([])
             cont += 1
     print(matrizmemoria)
-    
-        
+    achou = False
+    for k in range(len(matrizmemoria)):
+        if achou == False:
+            if len(matrizmemoria[k]) >= tamanho:
+                omelhor = matrizmemoria[k]
+                achou = True
+        else:      
+            if len(matrizmemoria[k]) >= tamanho:
+                if len(matrizmemoria[k]) < len(omelhor):
+                    omelhor = matrizmemoria[k]
+    for l in omelhor:
+        memoria[l] = letra
+    if memoria == testememoria:
+        print("\nNão foi possível alocar a memória")
+    else:
+        print("\nMemória alocada com sucesso")
+        return memoria
         
             
 
@@ -98,12 +113,15 @@ letra = ''
 
 
 # MENU
-while(opcao != 5):
+while True:
     print("\n1 - Primeira Escolha\n2 - Melhor Escolha\n3 - Pior Escolha\n4 - Imprimir Memória\n5 - Sair")
     opcao = int(input(("\nOq deseja fazer? ")))  # OPÇÃO DO MENU
 
+    if opcao == 5:
+        print("Saindo...")
+        break
     # IMPRIMIR A MEMÓRIA
-    if(opcao == 4):
+    if opcao == 4:
         imprimememoria()
     if opcao != 4 and opcao != 5:
         # PRIMEIRA ESCOLA
@@ -117,14 +135,11 @@ while(opcao != 5):
         else:
             # MELHOR ESCOLHA
             if (opcao == 2):
-                melhorescolha(tamanho, letra, memoria)
+                tamanho, letra = entradas()  #ENTRADA DE DADOS
+                testememoria = memoria.copy() #CÓPIA DA MEMÓRIA
+                melhorescolha(tamanho, letra, memoria, testememoria)
             else:
                 if(opcao == 3):
                     pass
                 else:
-                    if(opcao == 5):
-                        print("Saindo...")
-                        pass
-                    else:
-                        print("Opcao invalida")
-                        pass
+                    print("Opção inválida")
