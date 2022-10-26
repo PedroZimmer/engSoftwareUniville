@@ -74,7 +74,7 @@ for i in range(100):
     else:
         memoria[i] = ' '
 '''
-memoria =  ['x', 'x', 'x', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', 'x', ' ', 'x', ' ', ' ', ' ', ' ', 'x', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', 'x', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', 'x', 'x', ' ', ' ', 'x', ' ', 'x', ' ', 'x', 'x', ' ', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', 'x', 'x', ' ']
+memoria =  ['x', 'x', 'x', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', ' ', ' ', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', 'x', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', 'x', 'x', ' ', ' ', 'x', ' ', 'x', ' ', 'x', 'x', ' ', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', 'x', 'x', ' ']
 opcao = 0
 tamanho = 0
 letra = ''	
@@ -91,7 +91,7 @@ def entradas(): # ENTRADA DE DADOS
     return tamanho, letra     
 
 while True: # MENU
-    print("\n1 - Primeira Escolha\n2 - Melhor Escolha\n3 - Pior Escolha\n4 - Imprimir Memória\n5 - Sair")
+    print("\n\n1 - Primeira Escolha\n2 - Melhor Escolha\n3 - Pior Escolha\n4 - Imprimir Memória\n5 - Sair")
     opcao = int(input(("\nOq deseja fazer? ")))  # OPÇÃO DO MENU
     testememoria = memoria.copy()
     if opcao == 5:
@@ -100,8 +100,9 @@ while True: # MENU
     else:
         if opcao == 4:
             imprimememoria()
-        if opcao == 1 or opcao == 2 or opcao == 3:
-            tamanho, letra = entradas()
-            algoritimo(tamanho,letra, memoria, testememoria, opcao)
         else:
-            print("Opção inválida")
+            if opcao == 1 or opcao == 2 or opcao == 3:
+                tamanho, letra = entradas()
+                algoritimo(tamanho,letra, memoria, testememoria, opcao)
+            else:
+                print("Opção inválida")
