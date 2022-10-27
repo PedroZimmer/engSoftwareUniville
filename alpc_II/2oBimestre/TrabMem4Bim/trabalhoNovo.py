@@ -4,6 +4,7 @@ from tracemalloc import start
 def algoritimo(tamanho, letra, memoria, testememoria, opcao): #ALGORITIMO
     matrizmemoria = colocando_na_matriz(procurando_vazios(memoria))
     colocando_na_memoria(tamanho, memoria,achando_o_local(matrizmemoria,tamanho,opcao), letra, opcao)
+    print(matrizmemoria)
     finalizar(memoria, testememoria)
 
 def procurando_vazios(memoria): #PROCURANDO VAZIOS
@@ -16,13 +17,18 @@ def procurando_vazios(memoria): #PROCURANDO VAZIOS
 def colocando_na_matriz(vazios): #ALOCANDO VAZIOS NA MATRIZ
     matrizmemoria = [[]]
     cont = 0
-    for j in range(len(vazios)-1):
-        if vazios[j] - vazios[j+1] == -1:
+    for j in range(1,len(vazios)):
+        if j == len(vazios)-1:
             matrizmemoria[cont].append(vazios[j])
-        else:
-            matrizmemoria[cont].append(vazios[j]) 
-            matrizmemoria.append([]) #CRIA UMA NOVA LINHA
-            cont += 1
+            break
+        else:  
+            if vazios[j-1] - vazios[j] == -1:
+                matrizmemoria[cont].append(vazios[j-1])
+            else:
+                matrizmemoria[cont].append(vazios[j-1])
+                if j != len(vazios):
+                    matrizmemoria.append([])
+                    cont += 1
     return matrizmemoria
 
 def achando_o_local(matrizmemoria,tamanho,opcao): #ACHANDO O LOCAL PARA ARMAZENAR A MEMÓRIA
