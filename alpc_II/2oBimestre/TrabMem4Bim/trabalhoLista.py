@@ -1,7 +1,8 @@
 import random
 from tracemalloc import start
 
-def algoritimo(tamanho, letra, memoria, testememoria, opcao): #ALGORITIMO
+
+'''def algoritimo(tamanho, letra, memoria, testememoria, opcao): #ALGORITIMO
     matrizmemoria = colocando_na_matriz(procurando_vazios(memoria))
     colocando_na_memoria(tamanho, memoria,achando_o_local(matrizmemoria,tamanho,opcao), letra, opcao)
     print(matrizmemoria)
@@ -59,7 +60,11 @@ def colocando_na_memoria(tamanho,memoria,asposicoes,letra,opcao): #COLOCANDO NA 
     else: #PRIMEIRA ESCOLHA E PIOR ESCOLHA
         for l in range(tamanho):
             memoria[asposicoes[l]] = letra
-        return memoria
+        return memoria'''
+        
+        
+def primeira_escolha():
+    
 
 def finalizar(memoria, testememoria): #FINALIZAR ALGORITIMO
     if memoria == testememoria:
