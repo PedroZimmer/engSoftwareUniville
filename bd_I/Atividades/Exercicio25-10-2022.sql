@@ -30,3 +30,4 @@ INSERT INTO CartaoCredito (AgenciaCodigo, ContaNumero, ClienteCodigo, CartaoCodi
 VALUES (1, '173475-0', 1, '1234-7894-4561-1325', 10000, '2022-31-12', '123');
 
 -- 3
+
