@@ -12,34 +12,36 @@ c.	Faça uma função que determine e devolva ao programa principal a quantidade
     cuja idade está entre 18 e 35 (inclusive) e que tenham olhos azuis e cabelos louros.
 '''
 
-'''
+
 sexo = []
 olhos = []
-cabelo = []
+cabelos = []
 idade = []
-for i in range(5):
-    print("Pessoa", i+1)
-    sexo.append(input('Digite o sexo: '))
-    olhos.append(input('Digite a cor dos olhos: '))
-    cabelo.append(input('Digite a cor dos cabelos: '))
-    idade.append(int(input('Digite a idade: ')))
-'''
+def lerdados():    
+    for i in range(2):
+        print("Pessoa", i+1)
+        sexo.append(input('Digite o sexo: '))
+        olhos.append(input('Digite a cor dos olhos: '))
+        cabelos.append(input('Digite a cor dos cabelos: '))
+        idade.append(int(input('Digite a idade: ')))
+    return sexo, olhos, cabelos, idade
 
-sexo = ['M', 'F', 'F', 'M', 'F']
+
+'''sexo = ['M', 'F', 'F', 'M', 'F']
 olhos = ['C', 'C', 'C', 'A', 'C']
 cabelos = ['P', 'P', 'C', 'L', 'P']
-idade = [20, 30, 40, 50, 60]
+idade = [20, 30, 40, 50, 60]'''
 
 def mediaidade(olhos, cabelos, idade):
     somaidade = 0
     cont = 0
     for i in range(len(olhos)):
-        if olhos[i] == 'C' and cabelos[i] == 'P':
+        if olhos[i].upper() == 'C' and cabelos[i].upper() == 'P':
             somaidade += idade[i]
             cont += 1
     return somaidade/cont
 
-print(mediaidade(olhos, cabelos, idade))
+#print(mediaidade(olhos, cabelos, idade))
 
 def maioridade(idade):
     maior = idade[0]
@@ -47,7 +49,7 @@ def maioridade(idade):
         if idade[i] > maior:
             maior = idade[i]
     return maior
-print("maior idade =", maioridade(idade))
+#print("maior idade =", maioridade(idade))
 
 def qtd_feminino(olhos, cabelos, idade, sexo):
     cont = 0
@@ -55,4 +57,10 @@ def qtd_feminino(olhos, cabelos, idade, sexo):
         if idade[i] >= 18 and idade[i] <= 35 and olhos[i] == 'A' and cabelos[i] == 'L' and sexo[i] == 'F':
             cont += 1
     return cont
-print(qtd_feminino(olhos, cabelos, idade, sexo))
+#print(qtd_feminino(olhos, cabelos, idade, sexo))
+
+sexo,olhos,cabelos, idade = lerdados()
+print(mediaidade(olhos, cabelos, idade))
+maioridade(idade)
+qtd_feminino(olhos, cabelos, idade, sexo)
+
