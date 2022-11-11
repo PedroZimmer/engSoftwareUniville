@@ -1,70 +1,29 @@
 import random
 from tracemalloc import start
-
-
-'''def algoritimo(tamanho, letra, memoria, testememoria, opcao): #ALGORITIMO
-    matrizmemoria = colocando_na_matriz(procurando_vazios(memoria))
-    colocando_na_memoria(tamanho, memoria,achando_o_local(matrizmemoria,tamanho,opcao), letra, opcao)
-    print(matrizmemoria)
+        
+        
+def primeira_escolha(tamanho,letra, memoria, testememoria): # PRIMEIRA ESCOLHA
+    listavazios = []
+    for i in range(100):
+        if memoria[i] == ' ':
+            if tamanho == 1:
+                memoria[i] = letra
+                return memoria # FINALIZA O ALGORITIMO PARA TAMANHO 1
+            else:
+                if i < 99: # VERIFICA SE O TAMANHO É SUFICIENTE
+                    if memoria[i+1] == ' ':
+                        if listavazios == []:
+                            listavazios.append(i)
+                        listavazios.append(i+1)
+                    else:
+                        listavazios.clear()
+                if tamanho == len(listavazios):
+                    for j in range(tamanho):
+                        memoria[listavazios[j]] = letra
+                    finalizar(memoria, testememoria)
+                    return memoria # FINALIZA O ALGORITIMO PARA TAMANHO MAIOR QUE 1  
     finalizar(memoria, testememoria)
 
-def procurando_vazios(memoria): #PROCURANDO VAZIOS
-    vazios = []
-    for i in range(100): 
-        if memoria[i] == ' ':
-            vazios.append(i) 
-    return vazios   
-
-def colocando_na_matriz(vazios): #ALOCANDO VAZIOS NA MATRIZ
-    matrizmemoria = [[]]
-    cont = 0
-    for j in range(1,len(vazios)):
-        if j == len(vazios)-1:
-            matrizmemoria[cont].append(vazios[j])
-            break
-        else:  
-            if vazios[j-1] - vazios[j] == -1:
-                matrizmemoria[cont].append(vazios[j-1])
-            else:
-                matrizmemoria[cont].append(vazios[j-1])
-                if j != len(vazios):
-                    matrizmemoria.append([])
-                    cont += 1
-    return matrizmemoria
-
-def achando_o_local(matrizmemoria,tamanho,opcao): #ACHANDO O LOCAL PARA ARMAZENAR A MEMÓRIA
-    achou = False
-    for k in range(len(matrizmemoria)):
-        if achou == False:
-            if len(matrizmemoria[k]) >= tamanho:
-                asposicoes = matrizmemoria[k]
-                achou = True
-                if opcao == 1: #PRIMEIRA ESCOLHA
-                    return asposicoes
-        else:
-            if opcao == 3: #PIOR ESCOLHA
-                if len(matrizmemoria[k]) >= tamanho:
-                    if len(matrizmemoria[k]) > len(asposicoes):
-                        asposicoes = matrizmemoria[k]
-            else: #MELHOR ESCOLHA
-                if len(matrizmemoria[k]) >= tamanho:
-                    if len(matrizmemoria[k]) < len(asposicoes):
-                        asposicoes = matrizmemoria[k]
-    return asposicoes
-
-def colocando_na_memoria(tamanho,memoria,asposicoes,letra,opcao): #COLOCANDO NA MEMÓRIA
-    if opcao == 2: #MELHOR ESCOLHA
-        for p in asposicoes:
-            memoria[p] = letra
-        return memoria
-    else: #PRIMEIRA ESCOLHA E PIOR ESCOLHA
-        for l in range(tamanho):
-            memoria[asposicoes[l]] = letra
-        return memoria'''
-        
-        
-def primeira_escolha():
-    
 
 def finalizar(memoria, testememoria): #FINALIZAR ALGORITIMO
     if memoria == testememoria:
@@ -85,7 +44,9 @@ for i in range(100):
     else:
         memoria[i] = ' '
 '''
-memoria =  ['x', 'x', 'x', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', ' ', ' ', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', 'x', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', 'x', 'x', ' ', ' ', 'x', ' ', 'x', ' ', 'x', 'x', ' ', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', 'x', 'x', ' ']
+
+
+memoria =  ['x', 'x', 'x', ' ', 'x', 'x', 'x', 'x', 'x', 'x', ' ', ' ', ' ', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', 'x', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', 'x', 'x', ' ', ' ', 'x', ' ', 'x', ' ', 'x', 'x', ' ', ' ', ' ', ' ', ' ', ' ', 'x', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', 'x', 'x', ' ']
 opcao = 0
 tamanho = 0
 letra = ''	
@@ -112,8 +73,8 @@ while True: # MENU
         if opcao == 4:
             imprimememoria()
         else:
-            if opcao == 1 or opcao == 2 or opcao == 3:
+            if opcao == 1:
                 tamanho, letra = entradas()
-                algoritimo(tamanho,letra, memoria, testememoria, opcao)
+                primeira_escolha(tamanho,letra, memoria, testememoria)
             else:
                 print("Opção inválida")
