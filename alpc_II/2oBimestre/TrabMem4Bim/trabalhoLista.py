@@ -1,7 +1,6 @@
 import random
 from tracemalloc import start
         
-        
 def primeira_escolha(tamanho,letra, memoria, testememoria): # PRIMEIRA ESCOLHA
     listavazios = []
     for i in range(100):
@@ -45,7 +44,6 @@ def pior_melhor_escolha(tamanho, letra, memoria, testememoria, opcao): # PIOR ES
                                 listavazios.clear()
                             else:
                                 listavazios.clear()
-
                         if opcao == 2:
                             asposicoes = listavazios.copy()
                             if len(asposicoes) == tamanho:
@@ -57,8 +55,7 @@ def pior_melhor_escolha(tamanho, letra, memoria, testememoria, opcao): # PIOR ES
                             else:
                                 listavazios.clear()
                     else:
-                        listavazios.clear()
-                        
+                        listavazios.clear()   
     for j in range(tamanho):
         memoria[asposicoes[j]] = letra
     finalizar(memoria, testememoria)
@@ -76,8 +73,6 @@ opcao = 0
 tamanho = 0
 letra = ''	
 
-
-
 def imprimememoria(): # IMPRIMIR MEMORIA
     for i in range(100):
         if i % 20 == 0:  # QUEBRA A CADA 20 POSIÇÕES
@@ -88,7 +83,6 @@ def entradas(): # ENTRADA DE DADOS
     tamanho = int(input("Tamanho: "))
     letra = input("Letra: ")
     return tamanho, letra     
-
 
 imprimememoria()
 while True: # MENU

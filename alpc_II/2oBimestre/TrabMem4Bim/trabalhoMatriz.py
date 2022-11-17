@@ -68,18 +68,6 @@ def finalizar(memoria, testememoria): #FINALIZAR ALGORITIMO
         print("\nMemória alocada com sucesso")
         return memoria    
 
-# INICIALIZAR MEMORIA
-'''
-memoria = [' '] * 100
-opcao = 0
-tamanho = 0
-letra = ''
-for i in range(100):
-    if(random.randint(0, 11) >= 5):
-        memoria[i] = 'x'
-    else:
-        memoria[i] = ' '
-'''
 memoria =  ['x', 'x', 'x', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', ' ', ' ', ' ', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', ' ', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', 'x', 'x', ' ', 'x', ' ', ' ', ' ', 'x', 'x', 'x', 'x', 'x', 'x', 'x', ' ', ' ', 'x', ' ', 'x', ' ', 'x', 'x', ' ', ' ', ' ', ' ', 'x', ' ', 'x', ' ', ' ', 'x', ' ', 'x', 'x', ' ', 'x', ' ', 'x', 'x', ' ']
 opcao = 0
 tamanho = 0
