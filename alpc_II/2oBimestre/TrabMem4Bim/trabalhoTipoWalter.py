@@ -54,10 +54,6 @@ def primeira_escolha(tamanho,letra, memoria, testememoria): # PRIMEIRA ESCOLHA
 
 
 
-
-
-
-
 def finalizar(memoria, testememoria): #FINALIZAR ALGORITIMO
     if memoria == testememoria:
         print("\nNão foi possível alocar a memória")
