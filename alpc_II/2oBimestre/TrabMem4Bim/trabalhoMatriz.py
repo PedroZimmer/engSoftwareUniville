@@ -11,7 +11,7 @@ def procurando_vazios(memoria): #PROCURANDO VAZIOS
     vazios = []
     for i in range(100): 
         if memoria[i] == ' ':
-            vazios.append(i) 
+            vazios.append(i) #cria uma lista com todos os itens vazios
     return vazios   
 
 def colocando_na_matriz(vazios): #ALOCANDO VAZIOS NA MATRIZ
