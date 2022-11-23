@@ -38,6 +38,10 @@ WHERE ClienteNome LIKE 'J%' -- Comeca com 'J'
 SELECT * FROM Clientes
 WHERE ClienteNome LIKE '%J' -- Termina com 'J'
 
+
+
+USE MinhaCaixa
+
 SELECT ClienteNome, ClienteSexo,
 CASE
     WHEN ClienteSexo = 'M' THEN 'Masculino'

@@ -11,6 +11,9 @@ FROM Clientes
     LEFT JOIN Movimentos ON (Contas.ContaNumero=Movimentos.ContaNumero)
 
 
+USE MinhaCaixa
+
+
 SELECT Clientes.ClienteNome, CartaoCredito.CartaoCodigo,
 CASE WHEN CartaoCodigo IS NULL THEN
 ClienteTelefone ELSE 'NÃO LIGAR' END AS 'SITUACAO'

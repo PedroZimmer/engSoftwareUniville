@@ -9,7 +9,7 @@ SELECT ClienteNome + ' ' + ClienteSobrenome
  + '/' + CONVERT(CHAR(10), ClienteRendaAnual) AS NomeCompleto
   FROM Clientes
 
-
+USE MinhaCaixa
 
   SELECT ClienteNascimento,
   DATENAME(MONTH,ClienteNascimento) AS MES,
