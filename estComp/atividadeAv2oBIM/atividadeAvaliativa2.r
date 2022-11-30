@@ -90,9 +90,27 @@ cargaNoPontodeFalha <- c(19.8,15.4,11.4,19.5,
 shapiro.test(cargaNoPontodeFalha)
 
 
-
+#5
 
 catalisador <- c()
 
 shapiro.test(catalisador)
 
+catalisador1 <-c(91.50, 94.18, 92.18,
+95.39,
+91.79,
+89.07,
+94.72,
+89.21)
+
+catalisador2 <- c(89.19,
+	90.95,
+	90.46,
+	93.21,
+	97.19,
+	97.04,
+	91.07,
+	92.75)
+
+shapiro.test(catalisador1)
+shapiro.test(catalisador2)
