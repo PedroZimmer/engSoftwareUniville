@@ -1,8 +1,3 @@
-
-
-
-
-
 # 1. Importando os dados
 
 library(readxl)
@@ -71,11 +66,7 @@ dados <- c(87.467,
 87.541
 )
 
-
 #dados <- gl(49, 1, 49, labels = c(novayork, sidney, seattle, singapore, tokyo, paris, orlando))
-
-
-
 
 #3 Criando um data frame
 tabela <- data.frame(Cidadesdata = cidadesgl, cafesdata = factor(cafesgl), dadosdata = dados)
@@ -83,7 +74,6 @@ tabela <- data.frame(Cidadesdata = cidadesgl, cafesdata = factor(cafesgl), dados
 resultado <- aov(dadosdata ~ cafesdata + Cidadesdata, tabela)
 
 anova(resultado)
-
 
 #teste tuckey 
 
