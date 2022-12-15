@@ -91,6 +91,9 @@ precoUnitario <- read_excel("C:/#Dev/engSoftwareUniville/estComp/2aAtividade_2oB
 
 #View(precoUnitario)
 
+
+#cafes <- factor(precoUnitario$Cafe)
+
 cafesgl <- gl(8,1, 512, labels = c(precoUnitario$Cafe))
 
 
@@ -101,7 +104,11 @@ cidadesgl <- gl(64, 8, 512, labels = c(colnames(precoUnitario[,2:65])))
 
 
 dados <- c(
-2.07,2.94,2.9,2.32,1.39,
+2.07,
+2.94,
+2.9,
+2.32,
+1.39,
 2.51,
 5.3,
 4.44,
@@ -615,7 +622,7 @@ dados <- c(
 
 tabela <- data.frame(Cidades = cidadesgl, Cafes = factor(cafesgl), Dados = dados)
 
-AnaliseOfVar <- aov(Dados ~ Cafes + Cidades, data = tabela)
+AnaliseOfVar <- aov(Dados ~ Cidades + Cafes, data = tabela)
 
 Anova <- anova(AnaliseOfVar)
 
