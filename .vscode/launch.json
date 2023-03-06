@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Desafio2",
+            "request": "launch",
+            "mainClass": "Desafio2",
+            "projectName": "engSoftwareUniville_b3994242"
+        },
+        {
+            "type": "java",
+            "name": "EntradadeDados",
+            "request": "launch",
+            "mainClass": "EntradadeDados",
+            "projectName": "engSoftwareUniville_b3994242"
+        },
+        {
+            "type": "java",
             "name": "HelloWorld",
             "request": "launch",
             "mainClass": "HelloWorld",
