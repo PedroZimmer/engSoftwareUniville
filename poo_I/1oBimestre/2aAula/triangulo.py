@@ -1,4 +1,3 @@
-
 lados = ['a','b','c']
 dados = []
 for i in lados:
@@ -13,8 +12,7 @@ for i in range(0,3):
             dados[i], dados[i+1] = dados[i+1], dados[i]
         else:
             pass
+        
 print(dados)
-
 if dados[0] + dados[1] > dados[2]:
     print('É um triangulo')
-    

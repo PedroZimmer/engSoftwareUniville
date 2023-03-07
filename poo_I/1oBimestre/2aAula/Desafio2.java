@@ -1,16 +1,12 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-
-
 
 public class Desafio2 {
     public static void main(String args[]) {
 
         List<Integer> triangulos = new ArrayList<Integer>();
-
-        
+ 
         try (Scanner entrada1 = new Scanner(System.in)) {
             System.out.println("Digite o primeiro lado: ");
             double lado1 = entrada1.nextDouble();
@@ -22,9 +18,7 @@ public class Desafio2 {
             double lado3 = entrada1.nextDouble();
             triangulos.add((int)lado3);
 
-            
             //ordenar lista
-
             triangulos.sort(null);
             System.out.println(triangulos);
             
@@ -41,14 +35,8 @@ public class Desafio2 {
             } else {
                 System.out.println("Não é um triangulo");
             }
-
-            
-
-
-            
-        }
-
-        
+ 
+        }  
 
     }
 }
