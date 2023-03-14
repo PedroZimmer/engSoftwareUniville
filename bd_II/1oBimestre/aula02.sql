@@ -21,6 +21,7 @@ SELECT * FROM DtsMinutos(1,GETDATE(),GETDATE()+1)
 
 
 
+
 CREATE FUNCTION clienteApos(@dt datetime)
 RETURNS TABLE
 AS
