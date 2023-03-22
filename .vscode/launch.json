@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "exercicio2",
+            "request": "launch",
+            "mainClass": "exercicio2",
+            "projectName": "engSoftwareUniville_b3994242"
+        },
+        {
+            "type": "java",
+            "name": "exercicio1",
+            "request": "launch",
+            "mainClass": "exercicio1",
+            "projectName": "engSoftwareUniville_b3994242"
+        },
+        {
+            "type": "java",
             "name": "Desafio2",
             "request": "launch",
             "mainClass": "Desafio2",
