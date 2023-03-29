@@ -1,7 +1,4 @@
-
-
-
-
+package Retangulo;
 
 
 public class Retangulo {
@@ -47,7 +44,7 @@ public class Retangulo {
      }
 
      public String toString(){
-          return "Retangulo = {Altura= " + altura + "base=" + base;
+          return "Retangulo.Retangulo = {Altura= " + altura + "base=" + base;
      }
 
 }

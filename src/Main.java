@@ -1,4 +1,8 @@
-public class Main {
+package Retangulo;
+
+import Retangulo.Retangulo;
+
+public class MainRetangulo {
     public static void main(String[] args) {
         Retangulo r = new Retangulo(100, 50);
         System.out.println("altura"+ r.getAltura());
