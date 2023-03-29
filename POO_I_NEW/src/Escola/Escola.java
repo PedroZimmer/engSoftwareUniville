@@ -1,2 +1,5 @@
-package Escola;public class Escola {
+package Escola;
+
+public class Escola {
+
 }
