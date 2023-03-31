@@ -82,6 +82,8 @@
 	('Pedro');
 	GO
 
+	
+
 
 
 	INSERT CURSOS
