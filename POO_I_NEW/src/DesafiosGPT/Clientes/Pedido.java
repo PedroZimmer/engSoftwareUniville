@@ -26,7 +26,8 @@ public class Pedido {
 
 
 
-    public void addtProduto(Produto produto, int quantidade){
+    public void
+    addtProduto(Produto produto, int quantidade){
         if(produto.getEstoqueProduto() >= quantidade){
             this.produtos.add(produto);
             produto.setEstoque(produto.getEstoqueProduto() - quantidade);
