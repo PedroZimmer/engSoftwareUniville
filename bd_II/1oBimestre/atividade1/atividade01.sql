@@ -9,7 +9,7 @@
 
 
 	USE Universidade;
-	GO
+
 	CREATE TABLE ALUNOS
 	(
 		MATRICULA INT NOT NULL IDENTITY
@@ -19,21 +19,26 @@
 
 
 
-	GO
+	
 	CREATE TABLE CURSOS
 	(
 		CURSO CHAR(3) NOT NULL
 			CONSTRAINT PK_CURSO PRIMARY KEY,
 		NOME VARCHAR(50) NOT NULL
 	);
-	GO
+
+
+	
 	CREATE TABLE PROFESSOR
 	(
 		PROFESSOR INT IDENTITY NOT NULL
 			CONSTRAINT PK_PROFESSOR PRIMARY KEY,
 		NOME VARCHAR(50) NOT NULL
 	);
-	GO
+	
+
+
+
 	CREATE TABLE MATERIAS
 	(
 		SIGLA CHAR(3) NOT NULL,
@@ -53,7 +58,6 @@
 			FOREIGN KEY (PROFESSOR)
 			REFERENCES PROFESSOR (PROFESSOR)
 	);
-	GO
 	
 
 	CREATE TABLE MATRICULA
@@ -100,7 +104,15 @@ ALTER TABLE MATRICULA ADD MEDIAFINAL FLOAT
 GO
 ALTER TABLE MATRICULA ADD NOTAEXAME FLOAT
 GO
-    CREATE PROCEDURE sp_CadastraNotas
+    
+
+
+
+
+
+	
+
+CREATE PROCEDURE sp_CadastraNotas
 	(
 		@MATRICULA INT,
 		@CURSO CHAR(3),
@@ -108,111 +120,94 @@ GO
 		@PERLETIVO CHAR(4),
 		@NOTA FLOAT,
 		@FALTA INT,
-		@PARAMETRO INT
+		@BIMESTRE INT
 	)
 	AS
-	BEGIN
+BEGIN
 
-		IF @PARAMETRO = 1
-		BEGIN
+		IF @BIMESTRE = 1
+		    BEGIN
 
-			UPDATE MATRICULA
-			SET N1 = @NOTA,
-				F1 = @FALTA,
-				TOTALPONTOS = @NOTA,
-				TOTALFALTAS = @FALTA,
-				MEDIA = @NOTA
-			WHERE MATRICULA = @MATRICULA
-				  AND CURSO = @CURSO
-				  AND MATERIA = @MATERIA
-				  AND PERLETIVO = @PERLETIVO;
-		END;
+                UPDATE MATRICULA
+                SET N1 = @NOTA,
+                    F1 = @FALTA,
+                    TOTALPONTOS = @NOTA,
+                    TOTALFALTAS = @FALTA,
+                    MEDIA = @NOTA
+                WHERE MATRICULA = @MATRICULA
+                    AND CURSO = @CURSO
+                    AND MATERIA = @MATERIA
+                    AND PERLETIVO = @PERLETIVO;
+		    END
 
-		ELSE IF @PARAMETRO = 2
-		BEGIN
+        ELSE 
+        
+        IF @BIMESTRE = 2
+            BEGIN
 
-			UPDATE MATRICULA
-			SET N2 = @NOTA,
-				F2 = @FALTA,
-				TOTALPONTOS = @NOTA + N1,
-				TOTALFALTAS = @FALTA + F1,
-				MEDIA = (@NOTA + N1) / 2
-			WHERE MATRICULA = @MATRICULA
-				  AND CURSO = @CURSO
-				  AND MATERIA = @MATERIA
-				  AND PERLETIVO = @PERLETIVO;
-		END;
+                UPDATE MATRICULA
+                SET N2 = @NOTA,
+                    F2 = @FALTA,
+                    TOTALPONTOS = @NOTA + N1,
+                    TOTALFALTAS = @FALTA + F1,
+                    MEDIA = (@NOTA + N1) / 2
+                WHERE MATRICULA = @MATRICULA
+                    AND CURSO = @CURSO
+                    AND MATERIA = @MATERIA
+                    AND PERLETIVO = @PERLETIVO;
+            END
 
-		ELSE IF @PARAMETRO = 3
-		BEGIN
+        ELSE 
+        
+        IF @BIMESTRE = 3
+            BEGIN
 
-			UPDATE MATRICULA
-			SET N3 = @NOTA,
-				F3 = @FALTA,
-				TOTALPONTOS = @NOTA + N1 + N2,
-				TOTALFALTAS = @FALTA + F1 + F2,
-				MEDIA = (@NOTA + N1 + N2) / 3
-			WHERE MATRICULA = @MATRICULA
-				  AND CURSO = @CURSO
-				  AND MATERIA = @MATERIA
-				  AND PERLETIVO = @PERLETIVO;
-		END;
+                UPDATE MATRICULA
+                SET N3 = @NOTA,
+                    F3 = @FALTA,
+                    TOTALPONTOS = @NOTA + N1 + N2,
+                    TOTALFALTAS = @FALTA + F1 + F2,
+                    MEDIA = (@NOTA + N1 + N2) / 3
+                WHERE MATRICULA = @MATRICULA
+                    AND CURSO = @CURSO
+                    AND MATERIA = @MATERIA
+                    AND PERLETIVO = @PERLETIVO;
+            END
 
-		ELSE IF @PARAMETRO = 4
-		BEGIN
+        ELSE 
+        
+        IF @BIMESTRE = 4
+            BEGIN
 
-			DECLARE @RESULTADO VARCHAR(50),
-					@FREQUENCIA FLOAT,
-					@MEDIAFINAL FLOAT;
+                DECLARE @RESULTADO VARCHAR(50),
+                        @FREQUENCIA FLOAT,
+                        @MEDIAFINAL FLOAT,
+                        @CARGAHORA INT 
+                
+                SET @CARGAHORA = (
+                    SELECT CARGAHORARIA FROM MATERIAS 
+                    WHERE       SIGLA = @MATERIA
+                            AND CURSO = @CURSO)
 
-			DECLARE @CARGAHORA INT 
-			SET @CARGAHORA = (SELECT CARGAHORARIA 
-								FROM MATERIAS WHERE SIGLA = @MATERIA)
-
-			UPDATE MATRICULA
-			SET N4 = @NOTA,
-				F4 = @FALTA,
-				TOTALPONTOS = @NOTA + N1 + N2 + N3,
-				TOTALFALTAS = @FALTA + F1 + F2 + F3,
-				MEDIA = (@NOTA + N1 + N2 + N3) / 4,
-				MEDIAFINAL = (@NOTA + N1 + N2 + N3) / 4,
-				PERCFREQ = 100 -( ((@FALTA + F1 + F2 + F3)*144 )/100)
-					   WHERE MATRICULA = @MATRICULA
-				  AND CURSO = @CURSO
-				  AND MATERIA = @MATERIA
-				  AND PERLETIVO = @PERLETIVO;
-
-
-		END;
-
-		SELECT *
-		FROM MATRICULA
-		WHERE MATRICULA = @MATRICULA;
-	END;
-GO
-    INSERT MATRICULA
-    (
-            MATRICULA,
-            CURSO,
-            MATERIA,
-            PROFESSOR,
-            PERLETIVO
-
-    )
-    SELECT 1 AS MATRICULA, CURSO, SIGLA,PROFESSOR, 
-		YEAR(GETDATE()) FROM MATERIAS WHERE CURSO ='ENG';
-GO
-SELECT * FROM MATRICULA
-GO
+                UPDATE MATRICULA
+                SET N4 = @NOTA,
+                    F4 = @FALTA,
+                    TOTALPONTOS = @NOTA + N1 + N2 + N3,
+                    TOTALFALTAS = @FALTA + F1 + F2 + F3,
+                    MEDIA = (@NOTA + N1 + N2 + N3) / 4,
+                    MEDIAFINAL = (@NOTA + N1 + N2 + N3) / 4,
+                    PERCFREQ = 100 -( ((@FALTA + F1 + F2 + F3)*@CARGAHORA )/100)
+                        WHERE MATRICULA = @MATRICULA
+                    AND CURSO = @CURSO
+                    AND MATERIA = @MATERIA
+                    AND PERLETIVO = @PERLETIVO;
 
 
-    EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
-						  @CURSO = 'ENG',      -- char(3)
-						  @MATERIA = 'BDA',    -- char(3)
-						  @PERLETIVO = '2023', -- char(4)
-						  @NOTA = 7.0,         -- float
-						  @FALTA = 2,
-						  @PARAMETRO = 1;      -- int
+            END
+            
+
+		SELECT * FROM MATRICULA	WHERE MATRICULA = @MATRICULA
+END
 
 
 
