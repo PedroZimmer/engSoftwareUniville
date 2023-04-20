@@ -64,3 +64,9 @@ EXEC cadastrar_materia 'XYZ', 'Orientação a objetos', 80, 'ENG', 1;
 SELECT * FROM MATERIAS 
 
 DELETE FROM MATERIAS WHERE SIGLA = 'BDA'
+
+
+---------------------------------------------------------------------
+
+--Procedure para matrricula
+
