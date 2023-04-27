@@ -174,7 +174,7 @@ GO
 
 ------------------------------------------------------------------------------
 
-CREATE PROCEDURE sp_CadastraNotas
+CREATE PROCEDURE cadastrar_nota
 	(
 		@MATRICULA INT,
 		@CURSO CHAR(3),
@@ -317,7 +317,6 @@ EXEC inserir_aluno 'Rodrigo Rodrigues';
 EXEC inserir_aluno 'Leandro Lopes';
 
 EXEC cadastrar_curso 'ENG', 'Engenharia de Software';
-GO
 
 EXEC cadastrar_professor 'Rodrigo Dornel';
 EXEC cadastrar_professor 'Leanderson André';
@@ -330,28 +329,26 @@ EXEC cadastrar_matricula @matricula = 2, @curso = 'ENG';
 
 
 
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 1.0, @FALTA = 1, @BIMESTRE = 3;
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 1.0, @FALTA = 1, @BIMESTRE = 4;
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 0, @BIMESTRE = 5;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 1.0, @FALTA = 1, @BIMESTRE = 3;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 1.0, @FALTA = 1, @BIMESTRE = 4;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 0, @BIMESTRE = 5;
 
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
 
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
+EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
 
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
-
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
-EXEC sp_CadastraNotas @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
-
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
-EXEC sp_CadastraNotas @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
+EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
 
 
 
