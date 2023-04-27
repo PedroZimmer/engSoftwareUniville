@@ -1,11 +1,13 @@
-    /*USE master;
-	ALTER DATABASE Universidade SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-	GO
-	DROP DATABASE Universidade;
-	GO
-	USE master;
-	CREATE DATABASE Universidade;
-	GO*/
+    -- USE master;
+	-- ALTER DATABASE Universidade SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	-- GO
+	-- DROP DATABASE Universidade;
+	-- GO
+	-- USE master;
+	-- CREATE DATABASE Universidade;
+	-- GO
+
+	SELECT * FROM Universidade
 
 
 	USE Universidade;
@@ -67,16 +69,16 @@
 		MATERIA CHAR(3),
 		PROFESSOR INT,
 		PERLETIVO INT,
-		N1 FLOAT,
-		N2 FLOAT,
-		N3 FLOAT,
-		N4 FLOAT,
+		Nota1 FLOAT,
+		Nota2 FLOAT,
+		Nota3 FLOAT,
+		Nota4 FLOAT,
 		TOTALPONTOS FLOAT,
 		MEDIA FLOAT,
-		F1 INT,
-		F2 INT,
-		F3 INT,
-		F4 INT,
+		Falta1 INT,
+		Falta2 INT,
+		Falta3 INT,
+		Falta4 INT,
 		TOTALFALTAS INT,
 		PERCFREQ FLOAT,
 		RESULTADO VARCHAR(20)
@@ -106,10 +108,6 @@ ALTER TABLE MATRICULA ADD NOTAEXAME FLOAT
 GO
     
 
-
-
-
-
 	
 
 CREATE PROCEDURE sp_CadastraNotas
@@ -129,8 +127,8 @@ BEGIN
 		    BEGIN
 
                 UPDATE MATRICULA
-                SET N1 = @NOTA,
-                    F1 = @FALTA,
+                SET Nota1 = @NOTA,
+                    Falta1 = @FALTA,
                     TOTALPONTOS = @NOTA,
                     TOTALFALTAS = @FALTA,
                     MEDIA = @NOTA
@@ -146,11 +144,11 @@ BEGIN
             BEGIN
 
                 UPDATE MATRICULA
-                SET N2 = @NOTA,
-                    F2 = @FALTA,
-                    TOTALPONTOS = @NOTA + N1,
-                    TOTALFALTAS = @FALTA + F1,
-                    MEDIA = (@NOTA + N1) / 2
+                SET Nota2 = @NOTA,
+                    Falta2 = @FALTA,
+                    TOTALPONTOS = @NOTA + Nota1,
+                    TOTALFALTAS = @FALTA + Falta1,
+                    MEDIA = (@NOTA + Nota1) / 2
                 WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
                     AND MATERIA = @MATERIA
@@ -163,11 +161,11 @@ BEGIN
             BEGIN
 
                 UPDATE MATRICULA
-                SET N3 = @NOTA,
-                    F3 = @FALTA,
-                    TOTALPONTOS = @NOTA + N1 + N2,
-                    TOTALFALTAS = @FALTA + F1 + F2,
-                    MEDIA = (@NOTA + N1 + N2) / 3
+                SET Nota3 = @NOTA,
+                    Falta3 = @FALTA,
+                    TOTALPONTOS = @NOTA + Nota1 + Nota2,
+                    TOTALFALTAS = @FALTA + Falta1 + Falta2,
+                    MEDIA = (@NOTA + Nota1 + Nota2) / 3
                 WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
                     AND MATERIA = @MATERIA
@@ -190,13 +188,13 @@ BEGIN
                             AND CURSO = @CURSO)
 
                 UPDATE MATRICULA
-                SET N4 = @NOTA,
-                    F4 = @FALTA,
-                    TOTALPONTOS = @NOTA + N1 + N2 + N3,
-                    TOTALFALTAS = @FALTA + F1 + F2 + F3,
-                    MEDIA = (@NOTA + N1 + N2 + N3) / 4,
-                    MEDIAFINAL = (@NOTA + N1 + N2 + N3) / 4,
-                    PERCFREQ = 100 -( ((@FALTA + F1 + F2 + F3)*@CARGAHORA )/100)
+                SET Nota3 = @NOTA,
+                    Falta4 = @FALTA,
+                    TOTALPONTOS = @NOTA + Nota1 + Nota2 + Nota3,
+                    TOTALFALTAS = @FALTA + Falta1 + Falta2 + Falta3,
+                    MEDIA = (@NOTA + Nota1 + Nota2 + Nota3) / 4,
+                    MEDIAFINAL = (@NOTA + Nota1 + Nota2 + Nota3) / 4,
+                    PERCFREQ = 100 -( ((@FALTA + Falta1 + Falta2 + Falta3)*@CARGAHORA )/100)
                         WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
                     AND MATERIA = @MATERIA
@@ -208,8 +206,7 @@ BEGIN
 
 		SELECT * FROM MATRICULA	WHERE MATRICULA = @MATRICULA
 END
-
-
+GO
 
 EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
                       @CURSO = 'ENG',      -- char(3)
@@ -242,4 +239,4 @@ EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
                       @NOTA = 7.0,         -- float
                       @FALTA = 2,
                       @BIMESTRE = 4;      -- int             
-```
+GO

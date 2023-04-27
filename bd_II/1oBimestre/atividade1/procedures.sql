@@ -1,7 +1,7 @@
 
 USE Universidade;
 --criar procedure para inserir alunos na tabela alunos
-
+GO
 create procedure inserir_aluno
 @nome varchar(50)
 AS
@@ -13,7 +13,7 @@ exec inserir_aluno 'Robertin';
 
 SELECT * FROM ALUNOS
 
-
+GO
 -------------------------------------------------------------------
 
 --criar procedure para cadastrar cursos
@@ -27,7 +27,7 @@ BEGIN
 END
 
 exec cadastrar_curso 'ADS', 'Análise e Desenvolvimento de Sistemas';
-
+GO
 
 ---------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ BEGIN
 END
 
 EXEC cadastrar_professor 'Dornel';
-
+GO
 ---------------------------------------------------------------------
 
 
@@ -65,8 +65,25 @@ SELECT * FROM MATERIAS
 
 DELETE FROM MATERIAS WHERE SIGLA = 'BDA'
 
-
+GO
 ---------------------------------------------------------------------
 
 --Procedure para matrricula
 
+CREATE PROCEDURE cadastrar_notas
+    (
+        @MATRICULA INT,
+        @CURSO CHAR(3),
+        @PERIODOLETIVO CHAR(4),
+        @NOTA FLOAT,
+        @FALTA INT,
+        @BIMESTRE INT
+    )
+    AS
+BEGIN
+
+        IF @BIMESTRE = 1
+            BEGIN
+
+                UPDATE MATRICULA
+                SET Nota1 = @NOTA,

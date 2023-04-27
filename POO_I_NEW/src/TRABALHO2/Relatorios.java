@@ -1,2 +1,6 @@
-package TRABALHO2;public class Relatorios {
+package TRABALHO2;
+
+public class Relatorios {
+
+
 }
