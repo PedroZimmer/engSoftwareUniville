@@ -1,14 +1,8 @@
 USE Universidade;
+GO
 
-GO
-create procedure inserir_aluno
-@nome varchar(50)
-AS
-BEGIN
-    INSERT ALUNOS VALUES (@nome);
-END
-GO
--------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
 
 create procedure cadastrar_curso
 @curso char(3),
@@ -18,18 +12,7 @@ BEGIN
     INSERT CURSOS VALUES (@curso, @nome);
 END
 GO
-
----------------------------------------------------------------------
-
-create procedure cadastrar_professor
-@nome varchar(50)
-AS
-BEGIN
-    INSERT PROFESSOR VALUES (@nome);
-END
-GO
----------------------------------------------------------------------
-
+-------------------------------------------------------------------------------------------
 create procedure cadastrar_materia
 @sigla char(3),
 @nome varchar(50),
@@ -41,7 +24,27 @@ BEGIN
     INSERT MATERIAS VALUES (@sigla, @nome, @cargahoraria, @curso, @professor);
 END
 GO
----------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+create procedure cadastrar_professor
+@nome varchar(50)
+AS
+BEGIN
+    INSERT PROFESSOR VALUES (@nome);
+END
+GO
+-------------------------------------------------------------------------------------------
+
+create procedure inserir_aluno
+@nome varchar(50)
+AS
+BEGIN
+    INSERT ALUNOS VALUES (@nome);
+END
+GO
+
+
+-------------------------------------------------------------------------------------------
 
 --Procedure para matrricula
 
