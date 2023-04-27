@@ -1,6 +1,7 @@
-
 USE Universidade;
---criar procedure para inserir alunos na tabela alunos
+
+
+
 GO
 create procedure inserir_aluno
 @nome varchar(50)
@@ -8,15 +9,8 @@ AS
 BEGIN
     INSERT ALUNOS VALUES (@nome);
 END
-
-exec inserir_aluno 'Robertin';
-
-SELECT * FROM ALUNOS
-
 GO
 -------------------------------------------------------------------
-
---criar procedure para cadastrar cursos
 
 create procedure cadastrar_curso
 @curso char(3),
@@ -25,13 +19,9 @@ AS
 BEGIN
     INSERT CURSOS VALUES (@curso, @nome);
 END
-
-exec cadastrar_curso 'ADS', 'Análise e Desenvolvimento de Sistemas';
 GO
 
 ---------------------------------------------------------------------
-
---procedure para PROFESSOR
 
 create procedure cadastrar_professor
 @nome varchar(50)
@@ -39,14 +29,8 @@ AS
 BEGIN
     INSERT PROFESSOR VALUES (@nome);
 END
-
-EXEC cadastrar_professor 'Dornel';
 GO
 ---------------------------------------------------------------------
-
-
-
---procedure para MATERIAS
 
 create procedure cadastrar_materia
 @sigla char(3),
@@ -59,31 +43,179 @@ BEGIN
     INSERT MATERIAS VALUES (@sigla, @nome, @cargahoraria, @curso, @professor);
 END
 
-EXEC cadastrar_materia 'XYZ', 'Orientação a objetos', 80, 'ENG', 1;
+-- SELECT * FROM MATERIAS 
 
-SELECT * FROM MATERIAS 
-
-DELETE FROM MATERIAS WHERE SIGLA = 'BDA'
+-- DELETE FROM MATERIAS WHERE SIGLA = 'BDA'
 
 GO
 ---------------------------------------------------------------------
 
 --Procedure para matrricula
 
-CREATE PROCEDURE cadastrar_notas
-    (
-        @MATRICULA INT,
-        @CURSO CHAR(3),
-        @PERIODOLETIVO CHAR(4),
-        @NOTA FLOAT,
-        @FALTA INT,
-        @BIMESTRE INT
-    )
-    AS
-BEGIN
+-- CREATE PROCEDURE cadastrar_notas
+--     (
+--         @MATRICULA INT,
+--         @CURSO CHAR(3),
+--         @PERIODOLETIVO CHAR(4),
+--         @NOTA FLOAT,
+--         @FALTA INT,
+--         @BIMESTRE INT
+--     )
+--     AS
+-- BEGIN
 
-        IF @BIMESTRE = 1
-            BEGIN
+--         IF @BIMESTRE = 1
+--             BEGIN
 
-                UPDATE MATRICULA
-                SET Nota1 = @NOTA,
+--                 UPDATE MATRICULA
+--                 SET Nota1 = @NOTA,
+
+
+-- CREATE PROCEDURE sp_CadastraNotas
+-- 	(
+-- 		@MATRICULA INT,
+-- 		@CURSO CHAR(3),
+-- 		@MATERIA CHAR(3),
+-- 		@PERLETIVO CHAR(4),
+-- 		@NOTA FLOAT,
+-- 		@FALTA INT,
+-- 		@BIMESTRE INT
+-- 	)
+-- 	AS
+-- BEGIN
+
+-- 		IF @BIMESTRE = 1
+-- 		    BEGIN
+
+--                 UPDATE MATRICULA
+--                 SET Nota1 = @NOTA,
+--                     Falta1 = @FALTA,
+--                     TOTALPONTOS = @NOTA,
+--                     TOTALFALTAS = @FALTA,
+--                     MEDIA = @NOTA
+--                 WHERE MATRICULA = @MATRICULA
+--                     AND CURSO = @CURSO
+--                     AND MATERIA = @MATERIA
+--                     AND PERLETIVO = @PERLETIVO;
+-- 		    END
+
+--         ELSE 
+        
+--         IF @BIMESTRE = 2
+--             BEGIN
+
+--                 UPDATE MATRICULA
+--                 SET Nota2 = @NOTA,
+--                     Falta2 = @FALTA,
+--                     TOTALPONTOS = @NOTA + Nota1,
+--                     TOTALFALTAS = @FALTA + Falta1,
+--                     MEDIA = (@NOTA + Nota1) / 2
+--                 WHERE MATRICULA = @MATRICULA
+--                     AND CURSO = @CURSO
+--                     AND MATERIA = @MATERIA
+--                     AND PERLETIVO = @PERLETIVO;
+--             END
+
+--         ELSE 
+        
+--         IF @BIMESTRE = 3
+--             BEGIN
+
+--                 UPDATE MATRICULA
+--                 SET Nota3 = @NOTA,
+--                     Falta3 = @FALTA,
+--                     TOTALPONTOS = @NOTA + Nota1 + Nota2,
+--                     TOTALFALTAS = @FALTA + Falta1 + Falta2,
+--                     MEDIA = (@NOTA + Nota1 + Nota2) / 3
+--                 WHERE MATRICULA = @MATRICULA
+--                     AND CURSO = @CURSO
+--                     AND MATERIA = @MATERIA
+--                     AND PERLETIVO = @PERLETIVO;
+--             END
+
+--         ELSE 
+        
+--         IF @BIMESTRE = 4
+--             BEGIN
+
+--                 DECLARE @RESULTADO VARCHAR(50),
+--                         @FREQUENCIA FLOAT,
+--                         @MEDIAFINAL FLOAT,
+--                         @CARGAHORA INT 
+                
+--                 SET @CARGAHORA = (
+--                     SELECT CARGAHORARIA FROM MATERIAS 
+--                     WHERE       SIGLA = @MATERIA
+--                             AND CURSO = @CURSO)
+
+--                 UPDATE MATRICULA
+--                 SET Nota3 = @NOTA,
+--                     Falta4 = @FALTA,
+--                     TOTALPONTOS = @NOTA + Nota1 + Nota2 + Nota3,
+--                     TOTALFALTAS = @FALTA + Falta1 + Falta2 + Falta3,
+--                     MEDIA = (@NOTA + Nota1 + Nota2 + Nota3) / 4,
+--                     MEDIAFINAL = (@NOTA + Nota1 + Nota2 + Nota3) / 4,
+--                     PERCFREQ = 100 -( ((@FALTA + Falta1 + Falta2 + Falta3)*@CARGAHORA )/100)
+--                         WHERE MATRICULA = @MATRICULA
+--                     AND CURSO = @CURSO
+--                     AND MATERIA = @MATERIA
+--                     AND PERLETIVO = @PERLETIVO;
+
+
+--             END
+            
+
+-- 		SELECT * FROM MATRICULA	WHERE MATRICULA = @MATRICULA
+-- END
+-- GO
+
+-- EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
+--                       @CURSO = 'ENG',      -- char(3)
+--                       @MATERIA = 'BDA',    -- char(3)
+--                       @PERLETIVO = '2023', -- char(4)
+--                       @NOTA = 7.0,         -- float
+--                       @FALTA = 2,
+--                       @BIMESTRE = 4;      -- int
+-- GO
+-- EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
+--                       @CURSO = 'ENG',      -- char(3)
+--                       @MATERIA = 'BDA',    -- char(3)
+--                       @PERLETIVO = '2023', -- char(4)
+--                       @NOTA = 7.0,         -- float
+--                       @FALTA = 2,
+--                       @BIMESTRE = 2;      -- int
+-- GO
+-- EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
+--                       @CURSO = 'ENG',      -- char(3)
+--                       @MATERIA = 'BDA',    -- char(3)
+--                       @PERLETIVO = '2023', -- char(4)
+--                       @NOTA = 7.0,         -- float
+--                       @FALTA = 2,
+--                       @BIMESTRE = 3;      -- int
+-- GO
+-- EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
+--                       @CURSO = 'ENG',      -- char(3)
+--                       @MATERIA = 'BDA',    -- char(3)
+--                       @PERLETIVO = '2023', -- char(4)
+--                       @NOTA = 7.0,         -- float
+--                       @FALTA = 2,
+--                       @BIMESTRE = 4;      -- int             
+-- GO
+
+
+-------------------------------------------------------------------------------
+
+-- fazer execução de procedures
+
+EXEC inserir_aluno 'Rodrigo Rodrigues';
+EXEC inserir_aluno 'Leandro Lopes';
+EXEC inserir_aluno 'Pedro Excel';
+
+EXEC cadastrar_curso 'ENG', 'Engenharia de Software';
+
+EXEC cadastrar_professor 'Rodrigo Dornel';
+EXEC cadastrar_professor 'Walter Coan';
+
+EXEC cadastrar_materia 'POO', 'Orientação a objetos', 80, 'ENG', 1;
+EXEC cadastrar_materia 'BDA', 'Banco de dados', 80, 'ENG', 1;
+
