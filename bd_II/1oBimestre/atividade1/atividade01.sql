@@ -289,23 +289,18 @@ BEGIN
             BEGIN
 
                 UPDATE MATRICULA
-                SET NOTAEXAME = @NOTA,
-                --FALTA CALCULAR O RESULTADO PÓS EXAME
-				
-					
+                SET NOTAEXAME = @NOTA,					
 				RESULTADO = 
 				CASE WHEN (@NOTA + MEDIAFINAL) / 2 >= 5 THEN 'APROVADO'
-
 				ELSE 'REPROVADO'
 				END			
-				
 				WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
                     AND MATERIA = @MATERIA
                     AND PERLETIVO = @PERLETIVO;
                 
             END
-
+			
 		SELECT * FROM MATRICULA	WHERE MATRICULA = @MATRICULA
 END
 
