@@ -1,7 +1,5 @@
 USE Universidade;
 
-
-
 GO
 create procedure inserir_aluno
 @nome varchar(50)
@@ -89,23 +87,23 @@ GO
 
 ---------------------------------------------------------------------
 
--- CREATE PROCEDURE cadastrar_notas
---     (
---         @MATRICULA INT,
---         @CURSO CHAR(3),
---         @PERIODOLETIVO CHAR(4),
---         @NOTA FLOAT,
---         @FALTA INT,
---         @BIMESTRE INT
---     )
---     AS
--- BEGIN
+CREATE PROCEDURE cadastrar_notas
+    (
+        @MATRICULA INT,
+        @CURSO CHAR(3),
+        @PERIODOLETIVO CHAR(4),
+        @NOTA FLOAT,
+        @FALTA INT,
+        @BIMESTRE INT
+    )
+    AS
+BEGIN
 
---         IF @BIMESTRE = 1
---             BEGIN
+        IF @BIMESTRE = 1
+            BEGIN
 
---                 UPDATE MATRICULA
---                 SET Nota1 = @NOTA,
+                UPDATE MATRICULA
+                SET Nota1 = @NOTA,
 
 
 -- CREATE PROCEDURE sp_CadastraNotas
@@ -206,6 +204,28 @@ GO
 -- END
 -- GO
 
+-------------------------------------------------------------------------------
+
+-- fazer execução de procedures
+
+EXEC inserir_aluno 'Rodrigo Rodrigues';
+EXEC inserir_aluno 'Leandro Lopes';
+EXEC inserir_aluno 'Pedro Excel';
+
+EXEC cadastrar_curso 'ENG', 'Engenharia de Software';
+GO
+
+EXEC cadastrar_professor 'Rodrigo Dornel';
+EXEC cadastrar_professor 'Walter Coan';
+
+EXEC cadastrar_materia 'POO', 'Orientação a objetos', 80, 'ENG', 1;
+EXEC cadastrar_materia 'BDA', 'Banco de dados', 80, 'ENG', 1;
+
+EXEC cadastrar_matricula @matricula = 1, @curso = 'ENG';
+EXEC cadastrar_matricula @matricula = 2, @curso = 'ENG';
+EXEC cadastrar_matricula @matricula = 3, @curso = 'ENG';
+
+
 -- EXEC sp_CadastraNotas @MATRICULA = 1,      -- int
 --                       @CURSO = 'ENG',      -- char(3)
 --                       @MATERIA = 'BDA',    -- char(3)
@@ -238,25 +258,3 @@ GO
 --                       @FALTA = 2,
 --                       @BIMESTRE = 4;      -- int             
 -- GO
-
-
--------------------------------------------------------------------------------
-
--- fazer execução de procedures
-
-EXEC inserir_aluno 'Rodrigo Rodrigues';
-EXEC inserir_aluno 'Leandro Lopes';
-EXEC inserir_aluno 'Pedro Excel';
-GO
-EXEC cadastrar_curso 'ENG', 'Engenharia de Software';
-GO
-
-EXEC cadastrar_professor 'Rodrigo Dornel';
-EXEC cadastrar_professor 'Walter Coan';
-
-EXEC cadastrar_materia 'POO', 'Orientação a objetos', 80, 'ENG', 1;
-EXEC cadastrar_materia 'BDA', 'Banco de dados', 80, 'ENG', 1;
-
-EXEC cadastrar_matricula @matricula = 1, @curso = 'ENG'
-EXEC cadastrar_matricula @matricula = 2, @curso = 'ENG'
-EXEC cadastrar_matricula @matricula = 3, @curso = 'ENG'

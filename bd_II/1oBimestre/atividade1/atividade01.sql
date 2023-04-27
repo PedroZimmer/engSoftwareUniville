@@ -106,8 +106,108 @@ GO
 ALTER TABLE MATRICULA ADD NOTAEXAME FLOAT
 GO
     
+
+
+create procedure inserir_aluno
+@nome varchar(50)
+AS
+BEGIN
+    INSERT ALUNOS VALUES (@nome);
+END
+GO
+-------------------------------------------------------------------
+
+create procedure cadastrar_curso
+@curso char(3),
+@nome varchar(50)
+AS
+BEGIN
+    INSERT CURSOS VALUES (@curso, @nome);
+END
+GO
+
+---------------------------------------------------------------------
+
+create procedure cadastrar_professor
+@nome varchar(50)
+AS
+BEGIN
+    INSERT PROFESSOR VALUES (@nome);
+END
+GO
+---------------------------------------------------------------------
+
+create procedure cadastrar_materia
+@sigla char(3),
+@nome varchar(50),
+@cargahoraria int,
+@curso char(3),
+@professor int
+AS
+BEGIN
+    INSERT MATERIAS VALUES (@sigla, @nome, @cargahoraria, @curso, @professor);
+END
+GO
+---------------------------------------------------------------------
+
+--Procedure para matrricula
+
+-- INSERT MATRICULA
+-- (
+--         MATRICULA,
+--         CURSO,
+--         MATERIA,
+--         PROFESSOR,
+--         PERLETIVO
+
+-- )
+-- SELECT 1 AS MATRICULA, CURSO, SIGLA,PROFESSOR, -- ESSE "1" É A MATRICULA DO ALUNO, NO CASO EU TO INSERINDO NA TABELA MATRICULA CADA MATERIA EM QUE O ALUNO ESTA MATRICULADO
+--     YEAR(GETDATE()) FROM MATERIAS WHERE CURSO ='ENG'
+-- GO
+
+
+create procedure cadastrar_matricula
+@matricula int,
+@curso char(3)
+-- @materia char(3),
+-- @professor int,
+-- @perletivo char(4)
+AS
+BEGIN
+    INSERT MATRICULA
+(
+        MATRICULA,
+        CURSO,
+        MATERIA,
+        PROFESSOR,
+        PERLETIVO
+)
+    SELECT @matricula AS MATRICULA, CURSO, SIGLA,PROFESSOR, -- ESSE "1" É A MATRICULA DO ALUNO, NO CASO EU TO INSERINDO NA TABELA MATRICULA CADA MATERIA EM QUE O ALUNO ESTA MATRICULADO
+    YEAR(GETDATE()) FROM MATERIAS WHERE CURSO = @curso;
+END
+GO
+
+EXEC inserir_aluno 'Rodrigo Rodrigues';
+EXEC inserir_aluno 'Leandro Lopes';
+EXEC inserir_aluno 'Pedro Excel';
+
+EXEC cadastrar_curso 'ENG', 'Engenharia de Software';
+GO
+
+EXEC cadastrar_professor 'Rodrigo Dornel';
+EXEC cadastrar_professor 'Walter Coan';
+
+EXEC cadastrar_materia 'POO', 'Orientação a objetos', 80, 'ENG', 1;
+EXEC cadastrar_materia 'BDA', 'Banco de dados', 80, 'ENG', 1;
+
+EXEC cadastrar_matricula @matricula = 1, @curso = 'ENG';
+EXEC cadastrar_matricula @matricula = 2, @curso = 'ENG';
+EXEC cadastrar_matricula @matricula = 3, @curso = 'ENG';
+
+
 SELECT * FROM MATRICULA
 SELECT * FROM ALUNOS
 SELECT * FROM CURSOS
 SELECT * FROM MATERIAS
 SELECT * FROM PROFESSOR
+GO
