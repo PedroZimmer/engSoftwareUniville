@@ -16,4 +16,9 @@ public class TiposGanhos {
         TipoGanhos = tipoGanhos;
     }
 
+    //toString
+    public String toString() {
+        return TipoGanhos;
+    }
+
 }

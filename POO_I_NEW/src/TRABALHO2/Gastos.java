@@ -7,11 +7,11 @@ public class Gastos {
     private String TipoGastos;
     private String FormaPagamento;
 
-    public Gastos(String dataGastos, double valorGastos, TiposGastos tipoGastos, String formaPagamento) {
+    public Gastos(String dataGastos, double valorGastos, TiposGastos tipoGastos, FormaPagamento formaPagamento) {
         DataGastos = dataGastos;
         ValorGastos = valorGastos;
         TipoGastos = String.valueOf(tipoGastos);
-        FormaPagamento = formaPagamento;
+        FormaPagamento = String.valueOf(formaPagamento);
     }
 
     public String getDataGastos() {
@@ -46,3 +46,5 @@ public class Gastos {
         FormaPagamento = formaPagamento;
     }
 }
+
+

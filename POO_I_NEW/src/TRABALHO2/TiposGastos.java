@@ -16,6 +16,10 @@ public class TiposGastos {
         TipoGastos = tipoGastos;
     }
 
+    public String toString() {
+        return TipoGastos;
+    }
+
 
 
 }

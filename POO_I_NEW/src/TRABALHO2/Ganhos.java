@@ -36,4 +36,6 @@ public class Ganhos {
     public void setDataGanhos(String dataGanhos) {
         DataGanhos = dataGanhos;
     }
+
+
 }

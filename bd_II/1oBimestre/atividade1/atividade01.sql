@@ -248,8 +248,8 @@ BEGIN
                 
                 SET @CARGAHORA = (
                     SELECT CARGAHORARIA FROM MATERIAS 
-                    WHERE       SIGLA = @MATERIA
-                            AND CURSO = @CURSO)
+                    WHERE       SIGLA = @MATERIA AND
+								CURSO = @CURSO)
 
                 UPDATE MATRICULA
                 SET Nota4 = @NOTA,
@@ -258,10 +258,8 @@ BEGIN
                     TOTALFALTAS = @FALTA + Falta1 + Falta2 + Falta3,
                     MEDIA = (@NOTA + Nota1 + Nota2 + Nota3) / 4,
                     MEDIAFINAL = (@NOTA + Nota1 + Nota2 + Nota3) / 4,
-                    PERCFREQ = 100 -( ((@FALTA + Falta1 + Falta2 + Falta3)*@CARGAHORA )/100)
-
-                    --RESULTADO
-                    ,RESULTADO = 
+                    PERCFREQ = 100 -( ((@FALTA + Falta1 + Falta2 + Falta3)*@CARGAHORA )/100),
+					RESULTADO = 
                     CASE 
                         WHEN ((@NOTA + Nota1 + Nota2 + Nota3) / 4) >= 7 
                             AND (100 -( ((@FALTA + Falta1 + Falta2 + Falta3)*@CARGAHORA )/100))>=75
