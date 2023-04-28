@@ -301,25 +301,30 @@ BEGIN
 			
 		SELECT * FROM MATRICULA	WHERE MATRICULA = @MATRICULA
 END
-
+GO
 
 
 --------------------------------------------------------------------------------
 
+
+
 EXEC inserir_aluno 'Rodrigo Rodrigues';
 EXEC inserir_aluno 'Leandro Lopes';
-
+GO
 EXEC cadastrar_curso 'ENG', 'Engenharia de Software';
+GO
 
 EXEC cadastrar_professor 'Rodrigo Dornel';
 EXEC cadastrar_professor 'Leanderson André';
+GO
 
 EXEC cadastrar_materia 'POO', 'Orientação a objetos', 80, 'ENG', 2;
 EXEC cadastrar_materia 'BDA', 'Banco de dados', 80, 'ENG', 1;
+GO
 
 EXEC cadastrar_matricula @matricula = 1, @curso = 'ENG';
 EXEC cadastrar_matricula @matricula = 2, @curso = 'ENG';
-
+GO
 
 
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
@@ -327,28 +332,28 @@ EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 1.0, @FALTA = 1, @BIMESTRE = 3;
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 1.0, @FALTA = 1, @BIMESTRE = 4;
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 0, @BIMESTRE = 5;
+GO
 
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'POO', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
+GO
 
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
 EXEC cadastrar_nota @MATRICULA = 1, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
+GO
 
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 7.0, @FALTA = 1, @BIMESTRE = 1;
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 8.0, @FALTA = 1, @BIMESTRE = 2;
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 9.0, @FALTA = 1, @BIMESTRE = 3;
 EXEC cadastrar_nota @MATRICULA = 2, @CURSO = 'ENG', @MATERIA = 'BDA', @PERLETIVO = '2023', @NOTA = 10.0, @FALTA = 1, @BIMESTRE = 4;
+GO
 
 
 
 
 SELECT * FROM MATRICULA
-SELECT * FROM ALUNOS
-SELECT * FROM CURSOS
-SELECT * FROM MATERIAS
-SELECT * FROM PROFESSOR
 GO
