@@ -45,7 +45,7 @@ public class Main {
         System.out.println("3 - Listar ganhos");
         System.out.println("4 - Listar gastos");
         System.out.println("5 - Relatório mensal");
-        System.out.println("6 - Sair");
+
         System.out.println("Digite a opção desejada: ");
         Scanner scanner = new Scanner(System.in);
         int opcao = scanner.nextInt();
