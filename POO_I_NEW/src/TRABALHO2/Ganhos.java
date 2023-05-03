@@ -25,17 +25,5 @@ public class Ganhos {
         return DataGanhos;
     }
 
-    public void setValorGanhos(double valorGanhos) {
-        ValorGanhos = valorGanhos;
-    }
-
-    public void setTipoGanhos(String tipoGanhos) {
-        TipoGanhos = tipoGanhos;
-    }
-
-    public void setDataGanhos(String dataGanhos) {
-        DataGanhos = dataGanhos;
-    }
-
 
 }
