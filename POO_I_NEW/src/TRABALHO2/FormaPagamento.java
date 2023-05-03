@@ -8,14 +8,6 @@ public class FormaPagamento {
         FormaPagamento = formaPagamento;
     }
 
-    public String getFormaPagamento() {
-        return FormaPagamento;
-    }
-
-    public void setFormaPagamento(String formaPagamento) {
-        FormaPagamento = formaPagamento;
-    }
-
     public String toString() {
         return FormaPagamento;
     }
