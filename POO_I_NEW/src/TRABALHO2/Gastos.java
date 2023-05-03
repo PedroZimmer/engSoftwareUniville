@@ -4,14 +4,14 @@ public class Gastos {
 
     private String DataGastos;
     private double ValorGastos;
-    private String TipoGastos;
-    private String FormaPagamento;
+    private TiposGastos tipo;
+    private FormaPagamento tipoPagamento;
 
     public Gastos(String dataGastos, double valorGastos, TiposGastos tipoGastos, FormaPagamento formaPagamento) {
         DataGastos = dataGastos;
         ValorGastos = valorGastos;
-        TipoGastos = String.valueOf(tipoGastos);
-        FormaPagamento = String.valueOf(formaPagamento);
+        tipo = tipoGastos;
+        tipoPagamento = formaPagamento;
     }
 
     public String getDataGastos() {
@@ -22,12 +22,12 @@ public class Gastos {
         return ValorGastos;
     }
 
-    public String getTipoGastos() {
-        return TipoGastos;
+    public TiposGastos getTipoGastos() {
+        return tipo;
     }
 
-    public String getFormaPagamento() {
-        return FormaPagamento;
+    public FormaPagamento getFormaPagamento() {
+        return tipoPagamento;
     }
 
 }

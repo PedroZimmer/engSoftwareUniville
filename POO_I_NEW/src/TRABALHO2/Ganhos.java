@@ -4,21 +4,22 @@ public class Ganhos {
 
     private String DataGanhos;
     private double ValorGanhos;
-    private String TipoGanhos;
+
+    private TiposGanhos tipo;
 
 
     public Ganhos(String dataGanhos, double valorGanhos, TiposGanhos tipoGanhos) {
         DataGanhos = dataGanhos;
         ValorGanhos = valorGanhos;
-        TipoGanhos = String.valueOf(tipoGanhos);
+        tipo = tipoGanhos;
     }
 
     public double getValorGanhos() {
         return ValorGanhos;
     }
 
-    public String getTipoGanhos() {
-        return TipoGanhos;
+    public TiposGanhos getTipoGanhos() {
+        return tipo;
     }
 
     public String getDataGanhos() {
