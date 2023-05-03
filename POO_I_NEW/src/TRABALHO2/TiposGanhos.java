@@ -8,15 +8,6 @@ public class TiposGanhos {
         TipoGanhos = tipoGanhos;
     }
 
-    public String getTipoGanhos() {
-        return TipoGanhos;
-    }
-
-    public void setTipoGanhos(String tipoGanhos) {
-        TipoGanhos = tipoGanhos;
-    }
-
-    //toString
     public String toString() {
         return TipoGanhos;
     }
