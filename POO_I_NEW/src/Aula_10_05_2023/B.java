@@ -1,2 +1,6 @@
-package Aula_10_05_2023;public class B {
+package Aula_10_05_2023;
+
+public class B extends A{
+
+
 }
