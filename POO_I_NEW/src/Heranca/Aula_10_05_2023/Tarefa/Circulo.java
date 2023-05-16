@@ -11,10 +11,9 @@ public class Circulo extends Figura{
     }
 
     @Override
-    public int obterArea(){
+    public void obterArea(){
         this.area = Math.PI * Math.pow(this.raio, 2);
         System.out.println("A área do circulo é: " + this.area);
-        return 0;
     }
 
 

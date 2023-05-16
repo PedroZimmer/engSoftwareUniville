@@ -1,4 +1,10 @@
 package Aula_10_05_2023.Tarefa;
+
+
+
+
+
+
 import java.util.Scanner;
 
 public class Main {
@@ -31,5 +37,6 @@ public class Main {
         }
 
     }
+
 
 }

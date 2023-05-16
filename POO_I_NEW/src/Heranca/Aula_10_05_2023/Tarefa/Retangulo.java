@@ -14,10 +14,9 @@ public class Retangulo extends Figura{
     }
 
     @Override
-    public int obterArea() {
+    public void obterArea() {
         this.area = this.base * this.altura;
         System.out.println("A área do retangulo é: " + this.area);
-        return 0;
     }
 
 }
