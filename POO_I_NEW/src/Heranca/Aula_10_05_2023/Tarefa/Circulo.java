@@ -1,4 +1,4 @@
-package Aula_10_05_2023.Tarefa;
+package Heranca.Aula_10_05_2023.Tarefa;
 
 public class Circulo extends Figura{
 

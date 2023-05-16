@@ -1,2 +1,6 @@
-package Aula_12_05_2023.Atividade;public class Main {
+package Heranca.Atividade01;
+
+public class Main {
+
+
 }
