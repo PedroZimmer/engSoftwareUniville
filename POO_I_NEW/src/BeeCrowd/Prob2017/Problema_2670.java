@@ -9,9 +9,7 @@ public class Problema_2670 {
         int PRIMEIRO = sc.nextInt();
         int SEGUNDO = sc.nextInt();
         int TERCEIRO = sc.nextInt();
-
         int oMenorTempo = (SEGUNDO * 2)+(TERCEIRO * 4);
-
         if (oMenorTempo > (PRIMEIRO * 2)+(TERCEIRO * 2)) {
             oMenorTempo = (PRIMEIRO * 2)+(TERCEIRO * 2);
         }
