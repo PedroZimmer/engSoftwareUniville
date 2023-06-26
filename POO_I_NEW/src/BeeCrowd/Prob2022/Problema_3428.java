@@ -29,31 +29,19 @@ public class Problema_3428 {
             estourados++;
             int balao = 0;
 
-//            for (int i = 0; i < lista.size()-1; i++) { //talvez trocar a variavel numBaloes para estourados deixe mais eficiente
-//                if (lista.get( i + 1 ) == lista.get(balao) - 1 ) {
-//                   estourados++;
-//                   lista.remove(balao);
-//                   balao = i; // acho q da pra tirar esse balao e deixar somente i
-//                   i= 0;
-//                }
-//
-//            }
-//            flechas++;
-
             int i = 0;
-            while ( true) {
+            while (true) {
 
                 if (lista.get( i + 1 ) == lista.get(balao) - 1 ) {
                     estourados++;
+                    balao = i;
                     lista.remove(0);
-//                    balao = i; // acho q da pra tirar esse balao e deixar somente i
-                    i= 0;
+//                    i = 0;
                 }
                 i++;
 
 
             }
-
 
 
         }
