@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b27f69ab-7e1a-4780-8693-ae3173caa132" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/POO_I_NEW/src/BeeCrowd/Problema_3424.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/POO_I_NEW/src/BeeCrowd/Problema_3432.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/POO_I_NEW/src/Colecoes/ListaExercicios/Atv02/application/Program.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/POO_I_NEW/src/Colecoes/ListaExercicios/Atv02/entities/Compra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/POO_I_NEW/src/Colecoes/ListaExercicios/Atv02/entities/Product.java" afterDir="false" />
-    </list>
+    <list default="true" id="b27f69ab-7e1a-4780-8693-ae3173caa132" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +78,7 @@
       <workItem from="1680198704328" duration="70000" />
       <workItem from="1680262126217" duration="921000" />
       <workItem from="1686570218425" duration="6000" />
+      <workItem from="1689607703912" duration="80000" />
     </task>
     <servers />
   </component>
