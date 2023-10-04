@@ -1,20 +1,17 @@
-package br.servicos;
+package br.exemplo.servicos;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
-import br.entidades.Filme;
-import br.entidades.Locacao;
-import br.entidades.Usuario;
-import junit.framework.Assert;
+import br.exemplo.entidades.Filme;
+import br.exemplo.entidades.Locacao;
+import br.exemplo.entidades.Usuario;
 
 
 public class LocacaoServiceTest {

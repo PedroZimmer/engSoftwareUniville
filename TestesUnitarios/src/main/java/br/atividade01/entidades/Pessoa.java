@@ -1,4 +1,4 @@
-package br.entidades;
+package br.atividade01.entidades;
 
 public class Pessoa {
     private String nome;

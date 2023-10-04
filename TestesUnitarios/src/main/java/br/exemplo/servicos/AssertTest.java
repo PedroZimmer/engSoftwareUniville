@@ -1,11 +1,11 @@
-package br.servicos;
+package br.exemplo.servicos;
 
 import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.entidades.Usuario;
+import br.exemplo.entidades.Usuario;
 
 public class AssertTest {
 		

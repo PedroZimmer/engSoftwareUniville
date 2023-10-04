@@ -1,17 +1,12 @@
-package br.servicos;
+package br.exemplo.servicos;
 
-import static br.utils.DataUtils.adicionarDias;
+import static br.exemplo.utils.DataUtils.adicionarDias;
 
-import java.security.Provider.Service;
 import java.util.Date;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import br.entidades.Filme;
-import br.entidades.Locacao;
-import br.entidades.Usuario;
-import br.utils.DataUtils;
+import br.exemplo.entidades.Filme;
+import br.exemplo.entidades.Locacao;
+import br.exemplo.entidades.Usuario;
 
 public class LocacaoService {
 	

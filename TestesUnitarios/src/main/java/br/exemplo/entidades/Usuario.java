@@ -1,4 +1,4 @@
-package br.entidades;
+package br.exemplo.entidades;
 
 public class Usuario {
 

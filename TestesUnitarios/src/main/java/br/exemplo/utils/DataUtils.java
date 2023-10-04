@@ -1,4 +1,4 @@
-package br.utils;
+package br.exemplo.utils;
 
 import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.DAY_OF_WEEK;
