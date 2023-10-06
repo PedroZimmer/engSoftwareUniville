@@ -1,2 +1,32 @@
-package br.atividade02.entidades;public class Retangulo {
+package br.atividade02.entidades;
+
+public class Retangulo {
+
+    private double width;
+    private double height;
+
+    public Retangulo(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public double calculateArea() {
+        return width * height;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
 }
